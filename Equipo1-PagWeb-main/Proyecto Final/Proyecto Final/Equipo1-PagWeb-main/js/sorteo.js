@@ -3,26 +3,22 @@ function sorteo() {
     var numero = document.getElementById("sorteo-input").value ;
     var premio = Math.floor(Math.random() * 10)+1; //número premiado
     
-    var ganador=true;
-    
-    
+    var ganador=false;
         
-    
-    if(numero == premio) {
+    if(numero == premio) { 
         ganador=true;
-       
-    }else{
-        ganador=false;
-        
     }
+    mostrarMensajeSorteo(ganador);
+}
+
+    
     function mostrarMensajeSorteo(ganador){
-        if (ganador=true){
-            document.getElementById("texto-resultado").innerHTML = "Enhorabuena";
+        if (ganador){
+            document.getElementById("texto-resultado").innerText = "Enhorabuena";
             
         }
         else{
-            document.getElementById("texto-resultado").innerHTML = "Lo siento"
+            document.getElementById("texto-resultado").innerText = "Lo siento";
         }
     }
     
-    }
