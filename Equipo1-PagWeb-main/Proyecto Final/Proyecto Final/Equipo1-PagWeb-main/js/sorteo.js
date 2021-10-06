@@ -6,7 +6,7 @@ function sorteo() {
     
 
     if (isNaN(numero)) {
-        document.getElementById("texto-resultado").innerText = "No se permiten numeros";
+        document.getElementById("texto-resultado").innerText = "No se permiten letras";
     } else {
         if (numero == premio) {
             ganador = true;
