@@ -396,6 +396,19 @@
         }
 
        /* Clases*/
+
+          .login {
+            margin: auto;
+            border: 2px solid black;
+            width: 35rem;
+            padding: 15px;
+            border-radius: 15px;
+
+    }
+
+          .login p {
+            margin: 0;
+    }
           .encabezado {
             background-color: #c7c7c7;
             width: 100%;
@@ -448,7 +461,7 @@
 
         .imgContent{
           display: flex;
-    align-items: flex-start;
+          align-items: flex-start;
         }
 
         .formularioP{
@@ -458,11 +471,38 @@
 
         }
         .formularioInput{
-        width: 90%;
+          width: 90%;
       
-        margin: 0.5rem;
+          margin: 0.5rem;
       }
 /* IDENTIFICADORES*/
+
+#boton {
+  margin-top: 20px;
+  width: auto;
+  background-color: #3193de;
+  cursor: pointer;
+}
+
+#titulo_login {
+  font-size: 50px;
+  margin: 30px;
+}
+
+#mensajeLogin {
+  color: red;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#contenido {
+  margin-left: 26.5%;
+}
+
+#usuario {
+  margin-top: 10px;
+}
 
 #boton_aceptar {
   background-color: gray;
@@ -541,3 +581,5 @@ margin: 0 auto;
   padding: 5px;
 
  }
+
+ 
