@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    
 
     <div class="encabezado">
         <a href="index.html">    <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -22,12 +23,24 @@
             
                 <a id="home"href="index.html">Home</a>
                 <a id="aficionados"href="aficionados.html">Aficionados</a>
-                <a id="sorteo"href="aficionados-sorteo.html">Sorteo</a>
+                <a id="sorteo" href="aficionados-sorteo.html">Sorteo</a>
                 <a id="ÁreaPrivada"href="areaPrivadaPerita.html">Área Privada</a>
             
           </div>
     </div>
     <h1 style="font-size: 40px;">SORTEO</h1>
+    
+    <div style="text-align: center;">
+        
+            <p>Escriba su número para participar</p>
+            <input type="text" id="sorteo-input" ><br>
+            <input type="submit" value="Enviar"  onclick="sorteo()">
+            <p id="resultadoSorteo">El resultado fue:</p>
+
+            <p id="texto-resultado"></p>
+    </div>
+
+    <p>g</p>
    <div style="text-align: center;">
     <img src="https://catalogo.orange.es/catalogo/Imagenes/Dispositivos/playstation_5_Front.png" alt="PS5" class="masterRace">
     
@@ -38,7 +51,9 @@
         necesario estar registrado en la web y seguirnos en todas nuestras redes sociales que son Twitter, Instagram y
         Facebook.
     </P>
-    <script src="..\js\sorteo.js"></script>
+
+
+<script src="..\js\sorteo.js"></script>
 </body>
 
 </html>
