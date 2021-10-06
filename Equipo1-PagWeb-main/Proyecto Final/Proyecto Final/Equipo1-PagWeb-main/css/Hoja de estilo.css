@@ -351,15 +351,14 @@
 
 
 
-
-
-
-
 *,
 *::after,
 *::before {
  box-sizing: border-box;
 }
+
+
+/*Etiquetas*/
 
         body {
             background-color: rgb(235, 235, 235);
@@ -367,35 +366,6 @@
             font-size: 50px;
             margin: 0;
             
-        }
-
-        
-        .encabezado {
-            background-color: #c7c7c7;
-            width: 100%;
-            height: 200px;
-            text-align: center;
-        }
-
-        .presentacion {
-            border:5px solid #c7c7c7;
-            border-radius: 20px;
-            padding: 10px;
-            width: 150vh;
-            margin: auto;
-        }
-
-        .ident {
-            border: 5px solid black;
-            border-radius: 15px;
-            width: 500px;
-            padding: 30px;
-            margin: auto; 
-        }
-
-        #foto_equipo {
-            margin-top: 5vh;
-            border-radius: 15px;
         }
 
         p {
@@ -421,21 +391,45 @@
           margin-top: 50px;
         }
         img{
-        text-align: center;
+        margin: 0 auto;
+        display: block;
         }
+
+       /* Clases*/
+          .encabezado {
+            background-color: #c7c7c7;
+            width: 100%;
+            height: 200px;
+            text-align: center;
+        }
+
+        .presentacion {
+            border:5px solid #c7c7c7;
+            border-radius: 20px;
+            padding: 10px;
+            width: 150vh;
+            margin: auto;
+        }
+
+        .ident {
+            border: 5px solid black;
+            border-radius: 15px;
+            width: 500px;
+            padding: 30px;
+            margin: auto; 
+        }
+
+        .menu a{
+          text-decoration: none;
+          color: black;
+          font-size: 35px;
+          float: left;
+          margin-left: 5px;
+          padding: 14px 15px;
+        }
+
         .friki{
           width: 16em;
-        }
-     
-
-        #boton_aceptar {
-            background-color: gray;
-            border: none;
-            border-radius: 15px;
-            width: 170px;
-            height: 70px;
-            right: 0;
-            margin-top: 30px;
         }
 
         .menu {
@@ -443,17 +437,6 @@
             overflow: hidden;
   
         }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: gray;
-            margin-left: 33%;
-            
-        }
-
         .caja {
           width: 600px;
           height: 400px;
@@ -463,69 +446,98 @@
           border-radius: 15px;
         }
 
-       
-
-        #aceptar {
-          margin-top: 50px;
-          width: 200px;
-          height: 60px;
-          background-color: red;
-          border-radius: 15px;
-          text-align: center;
+        .imgContent{
+          display: flex;
+    align-items: flex-start;
         }
 
-        #aceptar:hover {
-          background-color: blue;
-          cursor: pointer;
-        }
-
-     
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            text-align: center;
-            padding: 5px 30px 5px 30px;
-            text-decoration: none;
-            color: black;
-        }
-
-        #home:hover {
-            background-color: #3193de;
-        }
-
-        #aficionados:hover {
-            background-color: #e83342;
-        }
-
-        #sorteo:hover {
-            background-color: #3193de;
-        }
-
-        #ÁreaPrivada:hover{
-          background-color: #e83342;
-        }
-        
-
-        
-
+        .formularioP{
   
-          #contenido{
-            width: 800px; 
-            margin: 0 auto;
-          }
-          .menu a{
-            text-decoration: none;
-            color: black;
-            font-size: 35px;
-            float: left;
-            margin-left: 5px;
-            padding: 14px 15px;
-          
-          }
+          margin: 0;
+          text-align: center;
+
+        }
+        .formularioInput{
+        width: 90%;
+      
+        margin: 0.5rem;
+      }
+/* IDENTIFICADORES*/
+
+#boton_aceptar {
+  background-color: gray;
+  border: none;
+  border-radius: 15px;
+  width: 170px;
+  height: 70px;
+  right: 0;
+  margin-top: 30px;
+}
+
+#foto_equipo {
+margin-top: 5vh;
+border-radius: 15px;
+}
+
+#aceptar {
+margin-top: 50px;
+width: 200px;
+height: 60px;
+background-color: red;
+border-radius: 15px;
+text-align: center;
+}
+
+#aceptar:hover {
+background-color: blue;
+cursor: pointer;
+}
+
+
+#home:hover {
+background-color: #3193de;
+}
+
+#aficionados:hover {
+background-color: #e83342;
+}
+
+#sorteo:hover {
+background-color: #3193de;
+}
+
+#ÁreaPrivada:hover{
+background-color: #e83342;
+}
+
+#contenido{
+width: 800px; 
+margin: 0 auto;
+}
 
 
 
+/*contenedor flex*/
+.contenedor {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+ }
+
+.box-1 {
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+  
+
+ }
+.box-2 {
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+
+ }
