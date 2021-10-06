@@ -9,13 +9,20 @@ function sorteo() {
         
     
     if(numero == premio) {
-        document.getElementById("texto-resultado").innerText =ganador=true;
-        //document.getElementById("texto-resultado").innerText = ganador;
-        //document.getElementById("texto-resultado").innerText = "Enhorabuena";
+        ganador=true;
+       
     }else{
-        document.getElementById("texto-resultado").innerText =ganador=false
-        //document.getElementById("texto-resultado").innerText = "Lo siento"
+        ganador=false;
+        
     }
-    
+    function mostrarMensajeSorteo(ganador){
+        if (ganador=true){
+            document.getElementById("texto-resultado").innerHTML = "Enhorabuena";
+            
+        }
+        else{
+            document.getElementById("texto-resultado").innerHTML = "Lo siento"
+        }
+    }
     
     }
