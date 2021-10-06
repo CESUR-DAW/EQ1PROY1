@@ -1,9 +1,21 @@
 
-var premio = 7; //número premiado
-var suerte = prompt("Introduce un numero entre el 1 y el 10 "); //pedimos el número del aficionado
-if (suerte == premio) {
-alert("¡Enhorabuena, ha ganado una entrada para el proximo partido"); //si acierta salta el mensaje
-}
-else {
-alert("Lo siento, siga probando.");// en caso de fallo sale este mensaje
-}
+function sorteo() {
+    var numero = document.getElementById("sorteo-input").value ;
+    var premio = Math.floor(Math.random() * 10)+1; //número premiado
+    
+    var ganador=true;
+    
+    
+        
+    
+    if(numero == premio) {
+        document.getElementById("texto-resultado").innerText =ganador=true;
+        //document.getElementById("texto-resultado").innerText = ganador;
+        //document.getElementById("texto-resultado").innerText = "Enhorabuena";
+    }else{
+        document.getElementById("texto-resultado").innerText =ganador=false
+        //document.getElementById("texto-resultado").innerText = "Lo siento"
+    }
+    
+    
+    }
