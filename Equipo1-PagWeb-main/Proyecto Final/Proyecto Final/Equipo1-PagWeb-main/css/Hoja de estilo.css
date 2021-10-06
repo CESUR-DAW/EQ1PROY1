@@ -453,8 +453,8 @@
 
         .formularioP{
   
-          margin: 0;
-          text-align: center;
+          width: 90%;
+          margin: 0.5rem 2.5rem;
 
         }
         .formularioInput{
