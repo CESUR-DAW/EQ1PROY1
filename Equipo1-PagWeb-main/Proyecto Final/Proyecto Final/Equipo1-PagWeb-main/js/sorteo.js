@@ -1,5 +1,4 @@
 
-
 function sorteo() {
     var numero = document.getElementById("sorteo-input").value ;
     var premio = Math.floor(Math.random() * 10)+1; //número premiado
