@@ -26,6 +26,7 @@ function mostrarTipoAficionado(year) {
     }
 }
 
+
 function calcularAños(fechaIntroducida) { // nos calcula los años
     const FechaHoy = Date.now(); 
     const hoy = new Date(FechaHoy);
@@ -34,3 +35,4 @@ function calcularAños(fechaIntroducida) { // nos calcula los años
     calculo = Math.trunc(calculo / 31557600000); // nos calcula los años y nos trunca al valor entero
     return calculo;
 }
+
