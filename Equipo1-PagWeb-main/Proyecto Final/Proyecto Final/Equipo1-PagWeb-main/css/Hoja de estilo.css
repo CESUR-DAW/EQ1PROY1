@@ -462,6 +462,17 @@
         margin: 0.5rem 2.5rem;
 
       }
+        .formularioInputAf{
+        width: 80%;     
+        margin: 0.5rem 2.5rem;
+      }
+
+      .formularioInputAfCaja{
+        width: 90%;     
+        margin: 0.5rem 2.5rem;
+        padding: auto;
+      }
+      
 /* IDENTIFICADORES*/
 
 #boton_aceptar {

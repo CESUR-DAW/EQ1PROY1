@@ -22,7 +22,7 @@
         <div id="contenido">
             <a id="home" href="index.html">Home</a>
             <a id="aficionados" href="aficionados.html">Aficionados</a>
-            <a id="sorteo" href="aficionados-sorteo.html">Sorteo</a>
+            <a id="sorteo" href="sorteo-aficionados.html">Sorteo</a>
             <a id="ÁreaPrivada" href="areaPrivadaLogin.html">Área Privada</a>
         </div>
     </div>
@@ -33,6 +33,7 @@
         <!--Inicio contenedor-->
         <h1 style="font-size: 45px;">AFICIONADOS DEL EQUIPO RASPANDO APROBADOS</h1>
 
+<<<<<<< Updated upstream
 <div class="box-1">
 
         <div id="formulario" class="formularioInput">
@@ -47,15 +48,34 @@
                 </div>
                 <button type="button" name="enviar" value="enviar" onclick="bienvenidoAficionado()">Enviar</button>
             </form>
+=======
+        <div class="box-1">
+
+            <div id="formulario" class="formularioInputCaja">
+                <form>
+                    <div>
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" name="nombre" id="nombre" class="formularioInputAf">
+                    </div>
+                    <div>
+                        <label for="year">Años como Aficionado: </label>
+                        <input type="number" name="year" id="year" class="formularioInputAf">
+                    </div>
+                    <div>
+                        <button type="button" name="enviar" value="enviar" onclick="bienvenidoAficionado()"
+                            class="formularioInputAf">Enviar</button>
+                    </div>
+                </form>
+            </div>
+>>>>>>> Stashed changes
         </div>
-    </div>
 
         <div class="box-1" id="contenido">
             <!--Inicio box-1-->
-            <p class = "formularioP" id="mensajeBienvenida">
+            <p class="formularioP" id="mensajeBienvenida">
 
             </p>
-            <p class = "formularioP" id="tipoAficionado">
+            <p class="formularioP" id="tipoAficionado">
 
             </p>
             <script src="../js/aficionados.js"></script>

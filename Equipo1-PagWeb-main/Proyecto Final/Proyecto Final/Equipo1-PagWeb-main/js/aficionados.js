@@ -1,6 +1,7 @@
 function bienvenidoAficionado() {
     var nombre = document.getElementById('nombre').value;
     var year = document.getElementById('year').value;
+<<<<<<< Updated upstream
     var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
     var calculoAños = calcularAños(fechaIntroducida);
     mostrarMensaje(nombre, calculoAños);
@@ -16,6 +17,30 @@ function mostrarTipoAficionado(year) {
         document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo básico";
     } else if (year > 2 && year <= 5) {
         document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo Avanzado";
+=======
+    mostrarMensaje(nombre, year);
+    mostrarTipoAficionado(year);
+
+}
+function mostrarMensaje(nombre, year) {
+
+    if (window.navigator.language === 'es-ES') {
+        document.getElementById('mensajeBienvenida').innerHTML = "Bienvenid@ a la pagina Aficionados Usuario: " + nombre + " usted lleva en el club: " + year + " años";
+    } else if (window.navigator.language === 'fr') {
+        document.getElementById('mensajeBienvenida').innerHTML = "Bienvenue sur la page Fans d'utilisateurs : " + nombre + " vous portez dans le club : " + year + " années";
+
+    } else {
+        document.getElementById('mensajeBienvenida').innerHTML = "Welcome to the page Fans User: " + nombre + " you wear in the club: " + year + " years";
+
+    }
+}
+
+function mostrarTipoAficionado(year) {
+    if (year > 0 && year <= 2) {
+        document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo básico";
+    } else if (year > 2 && year <= 5) {
+        document.getElementById('tipoAficionado').innerHTML = "USted es un aficionado de tipo Avanzado";
+>>>>>>> Stashed changes
     } else if (year > 5) {
         document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo Premium";
     } else {
