@@ -1,43 +1,34 @@
-var nombre = prompt("Introduzca su nombre como aficionado: "); //pedimos el nombre del aficionado
-var años = parseInt(prompt("Introduzca los años que lleva como aficionado: "));//años que lleva el aficionado
+function bienvenidoAficionado() {
+    var nombre = document.getElementById('nombre').value;
+    var year = document.getElementById('year').value;
+    var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
+    var calculoAños = calcularAños(fechaIntroducida);
+    mostrarMensaje(nombre, calculoAños);
+    mostrarTipoAficionado(calculoAños);
 
-while(Number.isNaN(años) || años < 0){
-   años = parseInt(prompt("Alerta! Solo valen numeros.Introduzca los años que lleva como aficionado: "));
+}
+function mostrarMensaje(nombre, calculoAños) {
+    document.getElementById('mensajeBienvenida').innerHTML = "Bienvenid@ a la pagina Aficionados Usuario: " + nombre + " usted lleva en el club: " + calculoAños + " años";
 }
 
-var equipo= "Raspando Aprobados"; //Nombre del equipo
-var dias = años*365;
-document.write("Hola <b>"+nombre + "</b> bienvenido a la web del equipo <b>" + equipo +"</b>. Gracias por acompañarnos durante estos <b>"+años+"</b> años, que son "+dias+" dias.");//mensaje una vez introduzcas los datos
-
-
-if (años >= 1 && años <= 2) {
-    document.write("Usted es un aficionado de nivel <b> básico </b>.");
-}else if (años > 2 && años < 6){
-    document.write("Usted es un aficionado de nivel <b> Avanzado </b>.");
-}else{
-    document.write("Usted es un aficionado de nivel <b> Premium </b>.");
+function mostrarTipoAficionado(year) {
+    if (year >= 0 && year <= 2) {
+        document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo básico";
+    } else if (year > 2 && year <= 5) {
+        document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo Avanzado";
+    } else if (year > 5) {
+        document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo Premium";
+    } else {
+        document.getElementById('tipoAficionado').innerHTML = "Ha introducido unos digitos no validos.";
+    }
 }
 
+function calcularAños(fechaIntroducida) { // nos calcula los años
+    const FechaHoy = Date.now(); 
+    const hoy = new Date(FechaHoy);
+    nuevaFecha = fechaIntroducida; 
+    calculo = hoy - nuevaFecha; // nos calcula los milisegundos entre la fecha indtroducida y hoy
+    calculo = Math.trunc(calculo / 31557600000); // nos calcula los años y nos trunca al valor entero
+    return calculo;
+}
 
-
-
-
-
-/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> */
-
-
-/*
-$(document).ready(function() {
-
-    var nombre = $("#name").val();
-    var año = $("#year").val();
-
-    $("#aceptar").click(function() {
-
-        alert(nombre);
-
-    });
-    
-
-
-});*/

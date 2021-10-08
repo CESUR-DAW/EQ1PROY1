@@ -67,8 +67,8 @@
             
                 <a id="home"href="index.html">Home</a>
                 <a id="aficionados"href="aficionados.html">Aficionados</a>
-                <a id="sorteo"href="aficionados-sorteo.html">Sorteo</a>
-                <a id="ÁreaPrivada"href="areaPrivadaPerita.html">Área Privada</a>
+                <a id="sorteo"href="sorteo-aficionados.html">Sorteo</a>
+                <a id="ÁreaPrivada"href="areaPrivadaLogin.html">Área Privada</a>
             
           </div>
     </div>
@@ -77,9 +77,13 @@
     
 
     <div class="login">
-        <p id="mensajeLogin" style="display: none;" align="center">Contraseña erronea, siga intentandolo</p>
+        <p id="mensajeLogin" style="display: none;" text-align="center">Contraseña erronea, siga intentandolo</p>
         <p id="redirigir" style="display: none;">Has agotado tus intentos, vas a ser redirigido a la pagina de inicio</p>
+
         <form>
+
+        <form class="formularioP">
+            <!-- Almacenamos los datos de usuario en los input dandoles una id para llamarlos desde js -->
             <p id="usuario">Usuario:</p>
             <input id="user" type="text">
             <p id="usuario">Contraseña:</p>

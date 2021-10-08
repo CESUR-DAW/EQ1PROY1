@@ -386,27 +386,16 @@
             font-size: 40px;
             text-align: center;
             
-        } 
-       
-	   img{
+        }
+        form{
+          margin-top: 50px;
+        }
+        img{
         margin: 0 auto;
         display: block;
         }
 
        /* Clases*/
-
-          .login {
-            margin: auto;
-            border: 2px solid black;
-            width: 35rem;
-            padding: 15px;
-            border-radius: 15px;
-
-    }
-
-          .login p {
-            margin: 0;
-    }
           .encabezado {
             background-color: #c7c7c7;
             width: 100%;
@@ -459,48 +448,50 @@
 
         .imgContent{
           display: flex;
-          align-items: flex-start;
+    align-items: flex-start;
         }
 
         .formularioP{
-  
-          margin: 0;
-          text-align: center;
+          text-align: center;  
+          width: 90%;
+          margin: 0.5rem 2.5rem;
 
         }
         .formularioInput{
-          width: 90%;
-      
-          margin: 0.5rem;
+        width: 90%;     
+        margin: 0.5rem 2.5rem;
+
       }
+        .formularioInputAf{
+        width: 80%;     
+        margin: 0.5rem 2.5rem;
+      }
+
+      .formularioInputAfCaja{
+        width: 90%;     
+        margin: 0.5rem 2.5rem;
+        padding: auto;
+      }
+      .margenAf{
+        margin-bottom: 14px;
+      }
+      .formAf{
+        
+          margin-top: 14px;
+        
+      }
+
+      .formularioInputAfBoton{
+        width: 80%;     
+        margin: 0.5rem 2.5rem;
+      }
+      .formularioInputAfBoton:hover{
+        background-color: black;
+        color: white;
+        transition: 0.5s;
+      }
+      
 /* IDENTIFICADORES*/
-
-#boton {
-  margin-top: 20px;
-  width: auto;
-  background-color: #3193de;
-  cursor: pointer;
-}
-
-#titulo_login {
-  font-size: 50px;
-  margin: 30px;
-}
-
-#mensajeLogin {
-  color: red;
-  margin-bottom: 20px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-#contenido {
-  margin-left: 26.5%;
-}
-
-#usuario {
-  margin-top: 10px;
-}
 
 #boton_aceptar {
   background-color: gray;
@@ -550,7 +541,7 @@ background-color: #e83342;
 
 #contenido{
 width: 800px; 
-
+margin: 0 auto;
 }
 
 
@@ -618,3 +609,5 @@ width: 800px;
 #misJug {
   margin-bottom: 30px;
 }
+
+ 

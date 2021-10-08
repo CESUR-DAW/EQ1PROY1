@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    
-    
+
+
     <link rel="stylesheet" href="../css/Hoja de estilo.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,28 +14,56 @@
 <body>
 
     <div class="encabezado">
-        <a href="index.html">    <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
+        <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
     </div>
 
-    <div class="menu"><!--INICIO Barra de navegacion-->
+    <div class="menu">
+        <!--INICIO Barra de navegacion-->
         <div id="contenido">
             <a id="home" href="index.html">Home</a>
             <a id="aficionados" href="aficionados.html">Aficionados</a>
-            <a id="sorteo" href="aficionados-sorteo.html">Sorteo</a>
-            <a id="ÁreaPrivada" href="areaPrivadaPerita.html">Área Privada</a>
+            <a id="sorteo" href="sorteo-aficionados.html">Sorteo</a>
+            <a id="ÁreaPrivada" href="areaPrivadaLogin.html">Área Privada</a>
         </div>
-    </div><!--FIN Barra de navegacion-->
+    </div>
+    <!--FIN Barra de navegacion-->
 
 
-    <div class="contenedor"> <!--Inicio contenedor-->
-    <h1 style="font-size: 45px;">AFICIONADOS DEL EQUIPO RASPANDO APROBADOS</h1>
-    
-    
-    <div  class="box-1"id="contenido">      <!--Inicio box-1-->
-        <script src="..\js\aficionados.js"></script>
-    </div>          <!--Fin box-1-->
+    <div class="contenedor">
+        <!--Inicio contenedor-->
+        <h1 style="font-size: 45px;">AFICIONADOS DEL EQUIPO RASPANDO APROBADOS</h1>
 
-    
-</div>  <!--Fin Inicio contenedor-->
+<div class="box-1">
+
+        <div id="formulario" class="formularioInput">
+            <form class="formAf">
+                <div class="margenAf">
+                    <label for="nombre" class="formularioInputAf">Nombre: </label>
+                    <input type="text" name="nombre" id="nombre" class="formularioInputAf">
+                </div>
+                <div class="margenAf">
+                    <label for="year" class="formularioInputAf"> Fecha de inscripccion: </label>
+                    <input type="date" name="year" id="year" class="formularioInputAf">
+                </div>
+                <button type="button" name="enviar" value="enviar" onclick="bienvenidoAficionado()" class="formularioInputAfBoton">Enviar</button>
+            </form>
+        </div>
+
+        <div class="box-1" id="contenido">
+            <!--Inicio box-1-->
+            <p class="formularioP" id="mensajeBienvenida">
+
+            </p>
+            <p class="formularioP" id="tipoAficionado">
+
+            </p>
+            <script src="../js/aficionados.js"></script>
+        </div>
+        <!--Fin box-1-->
+
+
+    </div>
+    <!--Fin Inicio contenedor-->
 </body>
+
 </html>
