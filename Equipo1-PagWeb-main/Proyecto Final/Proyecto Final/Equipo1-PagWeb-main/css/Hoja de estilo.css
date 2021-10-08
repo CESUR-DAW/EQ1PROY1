@@ -472,6 +472,24 @@
         margin: 0.5rem 2.5rem;
         padding: auto;
       }
+      .margenAf{
+        margin-bottom: 14px;
+      }
+      .formAf{
+        
+          margin-top: 14px;
+        
+      }
+
+      .formularioInputAfBoton{
+        width: 80%;     
+        margin: 0.5rem 2.5rem;
+      }
+      .formularioInputAfBoton:hover{
+        background-color: black;
+        color: white;
+        transition: 0.5s;
+      }
       
 /* IDENTIFICADORES*/
 
