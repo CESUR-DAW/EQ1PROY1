@@ -1,5 +1,5 @@
 
-function sorteo() {
+function sorteo() { //funcion sorteo para intentar acertar el numero aleatorio
     var numero = document.getElementById("sorteo-input").value;//el numero escrito en el formulario entra aquí
     var premio = Math.floor(Math.random() * 10) + 1; //el número se genera random cada vez que se ejecuta la función
     var ganador = false;
