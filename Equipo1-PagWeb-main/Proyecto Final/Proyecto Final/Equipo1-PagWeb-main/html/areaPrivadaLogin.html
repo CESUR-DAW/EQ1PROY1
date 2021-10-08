@@ -7,6 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área Privada Login</title>
 
+    <style>
+        .login {
+            margin: auto;
+            border: 2px solid black;
+            width: 35rem;
+            padding: 15px;
+            border-radius: 15px;
+ 
+        }
+
+        .login p {
+            margin: 0;
+        }
+
+        #boton {
+            margin-top: 20px;
+            width: auto;
+            background-color: #3193de;
+            cursor: pointer;
+        }
+
+        #boton:hover {
+            background-color: #e83342;
+        }
+
+        #titulo_login {
+            font-size: 50px;
+            margin: 30px;
+        }
+
+        #mensajeLogin {
+            color: red;
+            margin-bottom: 20px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #contenido {
+            margin-left: 26.5%;
+        } 
+
+        #usuario {
+            margin-top: 10px;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -28,19 +75,17 @@
 
     <h1 id="titulo_login"> Login Área Privada</h1>
     
-    <!-- formulario para logearse a area privada -->
+
     <div class="login">
         <p id="mensajeLogin" style="display: none;" align="center">Contraseña erronea, siga intentandolo</p>
         <p id="redirigir" style="display: none;">Has agotado tus intentos, vas a ser redirigido a la pagina de inicio</p>
         <form>
-            <!-- Almacenamos los datos de usuario en los input dandoles una id para llamarlos desde js -->
             <p id="usuario">Usuario:</p>
             <input id="user" type="text">
             <p id="usuario">Contraseña:</p>
             <input id="pass" type="text">
             <br>
-            <!-- Al presionar el boton se ejecuta la funcion login -->
-            <input id="boton" type="button" value="Aceptar" onclick="login()"> 
+            <input id="boton" type="button" value="Aceptar" onclick="login()">
             
         </form>
     </div>
