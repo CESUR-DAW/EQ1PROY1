@@ -1,6 +1,6 @@
 function bienvenidoAficionado() {
-    var nombre = document.getElementById('nombre').value;
-    var year = document.getElementById('year').value;
+    var nombre = document.getElementById('nombre').value; //Recoge en la variable "nombre", los datos introducidos por el usuario en el campo "nombre" del formulario.
+    var year = document.getElementById('year').value; //Recoge en la variable "year", los datos introducidos por el usuario en el campo "Fecha de inscripcion" del formulario.
     var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
     var calculoAños = calcularAños(fechaIntroducida);
     mostrarMensaje(nombre, calculoAños);
@@ -8,7 +8,11 @@ function bienvenidoAficionado() {
 
 }
 function mostrarMensaje(nombre, calculoAños) {
-    document.getElementById('mensajeBienvenida').innerHTML = "Bienvenid@ a la pagina Aficionados Usuario: " + nombre + " usted lleva en el club: " + calculoAños + " años";
+    if (calculoAños >= 0) {
+        document.getElementById('mensajeBienvenida').innerHTML = "Bienvenid@ a la pagina Aficionados Usuario: " + nombre + " usted lleva en el club: " + calculoAños + " años";
+    }else{
+        document.getElementById('mensajeBienvenida').innerHTML = "La fecha introducida no es valida";
+    }
 }
 
 function mostrarTipoAficionado(year) {
@@ -26,9 +30,10 @@ function mostrarTipoAficionado(year) {
 function calcularAños(fechaIntroducida) { // nos calcula los años
     const FechaHoy = Date.now(); 
     const hoy = new Date(FechaHoy);
+    const msAños = 31557600000; // milisegundos que tiene un año
     nuevaFecha = fechaIntroducida; 
     calculo = hoy - nuevaFecha; // nos calcula los milisegundos entre la fecha indtroducida y hoy
-    calculo = Math.trunc(calculo / 31557600000); // nos calcula los años y nos trunca al valor entero
+    calculo = Math.trunc(calculo / msAños); // nos calcula los años y nos trunca al valor entero
     return calculo;
 }
 
