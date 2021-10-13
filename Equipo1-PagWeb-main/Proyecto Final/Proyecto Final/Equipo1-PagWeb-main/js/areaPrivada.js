@@ -2,7 +2,6 @@
 var usuario = "dani";
 var contraseña = "pass1";
 var intentos = 3;
-var contador = 0;
 var arrayJug = [];
 
 
@@ -18,9 +17,9 @@ function login() {
     if(contraseña == passInput && usuario == userInput) {
         loginValido = true;
     }else {
-        if(contador < 2) {
-            contador++;
-            document.getElementById('mensajeLogin').innerHTML = "Contraseña erronea, siga intentandolo, quedan "+(intentos-contador)+" intentos";
+        if(intentos > 1) {
+            intentos--;
+            document.getElementById('mensajeLogin').innerHTML = "Contraseña erronea, siga intentandolo, quedan "+intentos+" intentos";
             document.getElementById('mensajeLogin').style.display = "block";
             document.getElementById('pass').value = '';
             
