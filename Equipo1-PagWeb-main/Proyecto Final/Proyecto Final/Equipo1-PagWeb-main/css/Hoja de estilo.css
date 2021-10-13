@@ -435,6 +435,7 @@
         .menu {
             background-color: gray;
             overflow: hidden;
+            
   
         }
         .caja {
@@ -448,8 +449,8 @@
 
         .imgContent{
           display: flex;
-    align-items: flex-start;
-        }
+          align-items: flex-start;
+          }
 
         .formularioP{
           text-align: center;  
@@ -510,6 +511,30 @@
         cursor: pointer;
         background-color: #e83342;
       }
+
+      
+      .login {
+        margin: auto;
+        border: 2px solid black;
+        width: 35rem;
+        padding: 15px;
+        border-radius: 15px;
+
+      }
+
+      .login p {
+        margin: 0;
+      }
+
+      
+      .hoverRojo:hover{
+        background-color: #e83342;
+      }
+      .hoverAzul:hover{
+        background-color: #3193de;
+      }
+
+
       
 /* IDENTIFICADORES*/
 
@@ -543,21 +568,6 @@ cursor: pointer;
 }
 
 
-#home:hover {
-background-color: #3193de;
-}
-
-#aficionados:hover {
-background-color: #e83342;
-}
-
-#sorteo:hover {
-background-color: #3193de;
-}
-
-#ÁreaPrivada:hover{
-background-color: #e83342;
-}
 
 #contenido{
 width: 800px; 
@@ -590,6 +600,34 @@ margin: 0 auto;
 #jugador {
   color: gray;
 }
+
+#boton {
+  margin-top: 20px;
+  width: auto;
+  background-color: #3193de;
+  cursor: pointer;
+}
+
+
+
+#titulo_login {
+  font-size: 50px;
+  margin: 30px;
+}
+
+#mensajeLogin {
+  color: red;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
+#usuario {
+  margin-top: 10px;
+}
+
 /*contenedor flex*/
 .contenedor {
   width: 100%;
@@ -619,49 +657,5 @@ margin: 0 auto;
 
 
 
-
-.login {
-  margin: auto;
-  border: 2px solid black;
-  width: 35rem;
-  padding: 15px;
-  border-radius: 15px;
-
-}
-
-.login p {
-  margin: 0;
-}
-
-#boton {
-  margin-top: 20px;
-  width: auto;
-  background-color: #3193de;
-  cursor: pointer;
-}
-
-#boton:hover {
-  background-color: #e83342;
-}
-
-#titulo_login {
-  font-size: 50px;
-  margin: 30px;
-}
-
-#mensajeLogin {
-  color: red;
-  margin-bottom: 20px;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-#contenido {
-  margin-left: 26.5%;
-} 
-
-#usuario {
-  margin-top: 10px;
-}
 
  
