@@ -491,6 +491,26 @@
         transition: 0.5s;
       }
       
+      .box-1-af {
+        width: 50%;
+        height: 50%;
+        padding: 5px;
+        border: 5px solid black;
+        border-radius: 15px;
+      
+       }
+       
+      
+      .boton {
+        width: 200px;
+        background-color: #3193de;
+      }
+      
+      .boton:hover {
+        cursor: pointer;
+        background-color: #e83342;
+      }
+      
 /* IDENTIFICADORES*/
 
 #boton_aceptar {
@@ -544,8 +564,32 @@ width: 800px;
 margin: 0 auto;
 }
 
+#jugLista p {
+  margin-left: 40px;
+  padding: 0;
+}
 
+#misJug {
+  margin-bottom: 30px;
+}
+#listaJug {
+  background-color: rgb(235, 235, 235);
+  margin: 0;
+  list-style: circle;
 
+}
+#jugadoresFav {
+            
+  width: 500px;
+  margin: auto;
+}
+#jugadoresFav p{
+  margin: 0;
+}
+
+#jugador {
+  color: gray;
+}
 /*contenedor flex*/
 .contenedor {
   width: 100%;
@@ -570,45 +614,11 @@ margin: 0 auto;
   padding: 5px;
 
  }
+ /*fin contenedor flex*/
 
- #jugadoresFav {
-            
-  width: 500px;
-  margin: auto;
-}
-#jugadoresFav p{
-  margin: 0;
-}
 
-#jugador {
-  color: gray;
-}
 
-.boton {
-  width: 200px;
-  background-color: #3193de;
-}
 
-.boton:hover {
-  cursor: pointer;
-  background-color: #e83342;
-}
-
-#listaJug {
-  background-color: rgb(235, 235, 235);
-  margin: 0;
-  list-style: circle;
-
-}
-
-#jugLista p {
-  margin-left: 40px;
-  padding: 0;
-}
-
-#misJug {
-  margin-bottom: 30px;
-}
 
 .login {
   margin: auto;

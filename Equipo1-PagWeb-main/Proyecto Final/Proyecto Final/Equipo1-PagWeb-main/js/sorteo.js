@@ -7,7 +7,7 @@ function sorteo() { //funcion sorteo para intentar acertar el numero aleatorio
 
     if (isNaN(numero)) { //Lector para ver si escribes letras en los numeros, si lo pones saltará el mensaje
         document.getElementById("texto-resultado").innerText = "No se permiten letras.";
-    } else if (numeros.length < 0) {
+    } else if (numero.length < 0) {
         document.getElementById("texto-resultado").innerText = "Introduzca un valor numerico.";
     }
     else {
@@ -23,13 +23,12 @@ function sorteo() { //funcion sorteo para intentar acertar el numero aleatorio
 
 function mostrarMensajeSorteo(ganador) { //Funcion muestra un mensaje si el numero que pones es igual al ganador
 
-
     if (ganador) {
-        document.getElementById("texto-resultado").innerText = "Enhorabuena ha ganado el sorteo. Su numero coincide con el numero ganador";
+        document.getElementById("texto-resultado").innerText = "El resultado fue: "+"Enhorabuena ha ganado el sorteo. Su numero coincide con el numero ganador.";
 
     }
     else {
 
-        document.getElementById("texto-resultado").innerText = "Lo siento, siga intentando";
+        document.getElementById("texto-resultado").innerText = "El resultado fue: "+"Lo siento, siga intentando";
     }
 }
