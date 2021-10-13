@@ -33,37 +33,41 @@
         <!--Inicio contenedor-->
         <h1 style="font-size: 45px;">AFICIONADOS DEL EQUIPO RASPANDO APROBADOS</h1>
 
-<div class="box-1">
+        <div class="box-1">
 
-        <div id="formulario" class="formularioInput">
-            <form class="formAf">
-                <div class="margenAf">
-                    <label for="nombre" class="formularioInputAf">Nombre: </label>
-                    <input type="text" name="nombre" id="nombre" class="formularioInputAf">
-                </div>
-                <div class="margenAf">
-                    <label for="year" class="formularioInputAf"> Fecha de inscripccion: </label>
-                    <input type="date" name="year" id="year" class="formularioInputAf">
-                </div>
-                <button type="button" name="enviar" value="enviar" onclick="bienvenidoAficionado()" class="formularioInputAfBoton">Enviar</button>
-            </form>
+            <!-- Formulario que recoge el nombre y la fecha del aficionado -->
+
+            <div id="formulario" class="formularioInput">
+                <form class="formAf">
+                    <div class="margenAf">
+                        <label for="nombre" class="formularioInputAf">Nombre: </label>
+                        <input type="text" name="nombre" id="nombre" class="formularioInputAf">
+                    </div>
+                    <div class="margenAf">
+                        <label for="year" class="formularioInputAf"> Fecha de inscripccion: </label>
+                        <input type="date" name="year" id="year" class="formularioInputAf">
+                    </div>
+                    <!-- Boton que llama a la funcion BienvenidoAficionados, que recoge los datos introducidos -->
+                    <button type="button" name="enviar" value="enviar" onclick="bienvenidoAficionado()"
+                        class="formularioInputAfBoton">Enviar</button>
+                </form>
+            </div>
+
+            <div class="box-1" id="contenido">
+                <!--Inicio box-1-->
+                <p class="formularioP" id="mensajeBienvenida">
+                    <!--Parrafo que muestra el mensaje de Bienvenida-->
+                </p>
+                <p class="formularioP" id="tipoAficionado">
+                    <!-- Muestra el tipo de aficionado-->
+                </p>
+                <script src="../js/aficionados.js"></script>
+            </div>
+            <!--Fin box-1-->
+
+
         </div>
-
-        <div class="box-1" id="contenido">
-            <!--Inicio box-1-->
-            <p class="formularioP" id="mensajeBienvenida">
-
-            </p>
-            <p class="formularioP" id="tipoAficionado">
-
-            </p>
-            <script src="../js/aficionados.js"></script>
-        </div>
-        <!--Fin box-1-->
-
-
-    </div>
-    <!--Fin Inicio contenedor-->
+        <!--Fin Inicio contenedor-->
 </body>
 
 </html>
