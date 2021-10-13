@@ -570,7 +570,15 @@ margin: 0 auto;
   padding: 5px;
 
  }
+ 
+ .box-1-af {
+  width: 50%;
+  height: 50%;
+  padding: 5px;
+  border: 5px solid black;
+  border-radius: 15px;
 
+ }
  #jugadoresFav {
             
   width: 500px;
