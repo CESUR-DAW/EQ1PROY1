@@ -3,6 +3,7 @@ var usuario = "dani";
 var contraseña = "pass1";
 var intentos = 3;
 var arrayJug = [];
+var borrarEle;
 
 //Esta funcion recoje el usuario y la contraseña de los inputs y las compara con las correctas
 function login() {
@@ -68,15 +69,25 @@ function añadirJugador() {
 function borrarJugador() {
     var jugador = document.getElementById('jugador').value;
     var lista = "";
-    var jugBorrado = arrayJug.indexOf("<li id='"+jugador+"'>"+jugador+"</li><br>");
-   
-    arrayJug.splice(jugBorrado, 1);//borra de la lista el jugador que coincide con el id
-    
-    //volvemos a reconstruir la lista despues de haber borrado el elemento
-    arrayJug.forEach(jug => {
-        lista = lista+jug;
-    });
 
-    //se pinta la nueva lista
-    document.getElementById('jugLista').innerHTML = lista;
+    if(arrayJug.includes("<li id='"+jugador+"'>"+jugador+"</li><br>")) {
+        document.getElementById('mensaje_error').style.display = "none";
+        var jugBorrado = arrayJug.indexOf("<li id='"+jugador+"'>"+jugador+"</li><br>");
+   
+        arrayJug.splice(jugBorrado, 1);//borra de la lista el jugador que coincide con el id
+        
+        //volvemos a reconstruir la lista despues de haber borrado el elemento
+        arrayJug.forEach(jug => {
+            lista = lista+jug;
+        });
+
+        //se pinta la nueva lista
+        document.getElementById('jugLista').innerHTML = lista;
+    }else {
+        document.getElementById('mensaje_error').style.display = "block";
+    }
+
+
+    
 }
+
