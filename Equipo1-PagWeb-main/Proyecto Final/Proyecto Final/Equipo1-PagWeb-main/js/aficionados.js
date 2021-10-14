@@ -3,9 +3,13 @@ function bienvenidoAficionado() {
     var year = document.getElementById('year').value; //Recoge en la variable "year", los datos introducidos por el usuario en el campo "Fecha de inscripcion" del formulario.
     var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
     var calculoAños = calcularAños(fechaIntroducida);
-    mostrarMensaje(nombre, calculoAños);
-    mostrarTipoAficionado(calculoAños);
-
+    
+    if (nombre.length > 0 && year.length > 0) {
+        mostrarMensaje(nombre, calculoAños);
+        mostrarTipoAficionado(calculoAños);
+    }else{
+        document.getElementById('mensajeBienvenida').innerHTML = "Ha introducido los campos vacios.";
+    }
 }
 
 function mostrarMensaje(nombre, calculoAños) { // Mostramos el mensaje de bienvenida
@@ -17,7 +21,6 @@ function mostrarMensaje(nombre, calculoAños) { // Mostramos el mensaje de bienv
 
     } else {
         document.getElementById('mensajeBienvenida').innerHTML = "Welcome to the page Fans User: " + nombre + " you've been in the club for: " + calculoAños + " years";
-
     }
 }
 
