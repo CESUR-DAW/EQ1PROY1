@@ -3,13 +3,14 @@ function bienvenidoAficionado() {
     var year = document.getElementById('year').value; //Recoge en la variable "year", los datos introducidos por el usuario en el campo "Fecha de inscripcion" del formulario.
     var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
     var calculoAños = calcularAños(fechaIntroducida);
+    
     mostrarMensaje(nombre, calculoAños);
     mostrarTipoAficionado(calculoAños);
 
 }
 
 function mostrarMensaje(nombre, calculoAños) { // Mostramos el mensaje de bienvenida
-    if (calculoAños >= 0 && nombre.length > 0) { // Descartamos fecha no valdad o un nombre vacio 
+    
         if (window.navigator.language === 'es-ES') { // Comparamos el idioma del navegador de cada usario.
             document.getElementById('mensajeBienvenida').innerHTML = "Bienvenid@ a la pagina Aficionados Usuario: " + nombre + " usted lleva en el club: " + calculoAños + " años";
         } else if (window.navigator.language === 'fr') {
@@ -17,11 +18,8 @@ function mostrarMensaje(nombre, calculoAños) { // Mostramos el mensaje de bienv
 
         } else {
             document.getElementById('mensajeBienvenida').innerHTML = "Welcome to the page Fans User: " + nombre + " you've been in the club for: " + calculoAños + " years";
-
         }
-    } else {
-        document.getElementById('mensajeBienvenida').innerHTML = "Los datos introducidos no son correctos";
-    }
+    
 }
 
 function mostrarTipoAficionado(year) { //Mensaje del tipo aficionado
@@ -37,12 +35,12 @@ function mostrarTipoAficionado(year) { //Mensaje del tipo aficionado
 }
 
 function calcularAños(fechaIntroducida) { // nos calcula los años
-    const FechaHoy = Date.now();
-    const hoy = new Date(FechaHoy);
+    var FechaHoy = Date.now();
     const msAños = 31557600000; // milisegundos que tiene un año
-    nuevaFecha = fechaIntroducida;
-    calculo = hoy - nuevaFecha; // nos calcula los milisegundos entre la fecha indtroducida y hoy
-    calculo = Math.trunc(calculo / msAños); // nos calcula los años y nos trunca al valor entero
-    return calculo;
+
+    var calculo = FechaHoy - fechaIntroducida; // nos calcula los milisegundos entre la fecha indtroducida y hoy
+    calculo = calculo / msAños;
+    var calculoTrunc = Math.trunc(calculo); // nos calcula los años y nos trunca al valor entero
+    return calculoTrunc;
 }
 
