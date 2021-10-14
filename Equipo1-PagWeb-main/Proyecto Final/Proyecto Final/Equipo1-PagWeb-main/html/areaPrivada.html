@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <link rel="stylesheet" href="../css/Hoja de estilo.css">
     <meta charset="UTF-8">
@@ -13,38 +14,36 @@
 <body>
 
     <div class="encabezado">
-        <a href="index.html">    <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
+        <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
     </div>
 
-    <div  class="menu">
+    <div class="menu">
         <div id="contenido">
-            
-            <a class="hoverAzul"href="index.html">Home</a>
+
+            <a class="hoverAzul" href="index.html">Home</a>
             <a class="hoverRojo" href="aficionados.html">Aficionados</a>
-            <a class="hoverAzul"href="sorteo-aficionados.html">Sorteo</a>
+            <a class="hoverAzul" href="sorteo-aficionados.html">Sorteo</a>
             <a class="hoverRojo" href="areaPrivadaLogin.html">Área Privada</a>
-            
-          </div>
+
+        </div>
     </div>
 
     <h1>Área Privada</h1>
 
-    <div id="jugadoresFav">
-        <p id="misJug">Mis jugadores favoritos:</p>
-        <ol id="jugLista">
 
-        </ol>
+    <div class="contenedor">
+        <div id="jugadoresFav">
+            <p style="margin: 5px;">Mis jugadores favoritos:</p>
+            <p id="jugLista">
+            </p>
+            <p> <input type="text" id="jugador"></p>
+            <p><input class="boton" type="button" id="añadirJug" value="Añadir" onclick="añadirJugador()">
+                <input class="boton" type="button" id="borrarJug" value="Borrar" onclick="borrarJugador()"></p>
 
-        <input type="text" id="jugador"><br>
-        <input class="boton" type="button" id="añadirJug" value="Añadir" onclick="añadirJugador()">
-        <input class="boton" type="button" id="borrarJug" value="Borrar" onclick="borrarJugador()">
-
-
-
-
+        </div>
     </div>
-
     <script src="../js/areaPrivada.js"></script>
 
 </body>
+
 </html>
