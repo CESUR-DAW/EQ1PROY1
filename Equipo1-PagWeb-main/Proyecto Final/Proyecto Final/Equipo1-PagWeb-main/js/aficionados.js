@@ -4,11 +4,11 @@ function bienvenidoAficionado() {
     var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
     var calculoAños = calcularAños(fechaIntroducida);
     
-    if (nombre.length > 0 && year.length > 0) {
+    if (nombre.length > 0 && year.length > 0 && calculoAños > 0) {
         mostrarMensaje(nombre, calculoAños);
         mostrarTipoAficionado(calculoAños);
     }else{
-        document.getElementById('mensajeBienvenida').innerHTML = "Ha introducido los campos vacios.";
+        document.getElementById('mensajeBienvenida').innerHTML = "Introduzca datos validos.";
     }
 }
 
@@ -25,7 +25,7 @@ function mostrarMensaje(nombre, calculoAños) { // Mostramos el mensaje de bienv
 }
 
 function mostrarTipoAficionado(year) { //Mensaje del tipo aficionado
-    if (year >= 0 && year <= 2) {
+    if (year >= 0 && year <= 2 ) {
         document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo básico";
     } else if (year > 2 && year <= 5) {
         document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo Avanzado";
