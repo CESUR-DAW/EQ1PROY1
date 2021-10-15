@@ -41,6 +41,6 @@ function calcularAños(fechaIntroducida) { // nos calcula los años
     const msAños = 31557600000; // milisegundos que tiene un año
     var calculo = FechaHoy - fechaIntroducida; // nos calcula los milisegundos entre la fecha indtroducida y hoy
     calculo = calculo / msAños;
-    var calculoTrunc = Math.trunc(calculo); // nos calcula los años y nos trunca al valor entero
+    var calculoTrunc = Math.trunc(calculo); // nos calcula los años y nos trunca al valor entero para abajo
     return calculoTrunc;
 }
