@@ -4,7 +4,7 @@ function bienvenidoAficionado() {
     var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
     var calculoAños = calcularAños(fechaIntroducida);
     
-    if (nombre.length > 0 && year.length > 0 && calculoAños > 0) {
+    if (nombre.length > 0 && year.length > 0 && calculoAños >= 0) {
         mostrarMensaje(nombre, calculoAños);
         mostrarTipoAficionado(calculoAños);
     }else{
