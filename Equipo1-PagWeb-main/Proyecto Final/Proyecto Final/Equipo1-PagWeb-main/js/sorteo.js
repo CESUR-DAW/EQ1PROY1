@@ -5,8 +5,8 @@ function sorteo() { //funcion sorteo para intentar acertar el numero aleatorio
     var ganador = false;
 
 
-    if (isNaN(numero)) { //Lector para ver si escribes letras en los numeros, si lo pones saltará el mensaje
-        document.getElementById("texto-resultado").innerText = "No se permiten letras.";
+    if (isNaN(numero) || numero <= 0) { //Lector para ver si escribes letras en los numeros, si lo pones saltará el mensaje
+        document.getElementById("texto-resultado").innerText = "Introduzca un numero entre 1 y 10";
     } else if (numero.length < 0) {
         document.getElementById("texto-resultado").innerText = "Introduzca un valor numerico.";
     }
