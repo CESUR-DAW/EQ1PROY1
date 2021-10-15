@@ -14,9 +14,6 @@ function añadirJugador() {
     }else{
         document.getElementById('jugador').value = "Introduce Jugador";
     }
-    
-    
-
 }
 
 //esta funcion borra al jugador que coincide con lo introducido en el input
