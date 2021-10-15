@@ -11,11 +11,9 @@ function sorteo() { //funcion sorteo para intentar acertar el numero aleatorio
         document.getElementById("texto-resultado").innerText = "Introduzca un valor numerico.";
     }
     else {
-
         if (numero == premio) {
             ganador = true;
         }
-
         mostrarMensajeSorteo(ganador);
     }
 }
