@@ -12,7 +12,7 @@ function añadirJugador() {
         mostrarLista();
         return listaJugadores;
     }else{
-        document.getElementById('jugador').value = "Introduce Jugador";
+        document.getElementById('jugador').value = "Introduce Jugador"; 
     }
 }
 
