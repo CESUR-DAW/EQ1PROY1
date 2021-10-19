@@ -1,5 +1,5 @@
 var listaJugadores = [];
-var borrarEle;
+
 
 //con esta funcion añadimos al jugador que introducimos en el input y lo almacenamos en un array
 function añadirJugador() {
