@@ -44,3 +44,17 @@ function calcularAños(fechaIntroducida) { // nos calcula los años
     var calculoTrunc = Math.trunc(calculo); // nos calcula los años y nos trunca al valor entero para abajo
     return calculoTrunc;
 }
+
+/*COMPRAR*/
+
+function comprar() {
+    
+}
+
+function actualizarEntradas(entradas) {
+    
+}
+
+function mostrarCarrito() {
+    
+}
