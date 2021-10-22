@@ -452,9 +452,9 @@ input {
     text-align: center;
 }
 
-form {
+/* form {
     margin-top: 50px;
-}
+} */
 
 img {
     margin: 0 auto;
@@ -502,6 +502,7 @@ img {
 
 .menu {
     background-color: gray;
+    
     overflow: hidden;
 }
 
@@ -631,8 +632,8 @@ img {
 }
 
 #contenido {
-    width: 800px;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
 }
 
 #jugLista p {
@@ -704,6 +705,39 @@ img {
     width: 50%;
     height: 50%;
     padding: 5px;
+}
+
+.menu {
+    margin-bottom: 50px;
+}
+
+#entrada {
+    margin: auto;
+    margin-bottom: 100px;
+    width: 740px;
+    border: 5px solid black;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+h4 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.dato {
+    border: 2px solid black;
+}
+
+#aceptar_entrada {
+    width: 300px;
+    background-color: gray;
+}
+
+#aceptar_entrada:hover {
+    cursor: pointer;
+    background-color: #3193de;
 }
 
 
