@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Área Privada Login</title>
     <link rel="shortcut icon" href="../img/foto-equipo.png" />
-
+    <script src="../js/login-areaPrivada.js"></script>
 </head>
 
-<body>
+<body onload="rellenarForm()">
 
     <div class="encabezado">
         <a href="index.html">    <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -34,22 +34,25 @@
         <p id="mensajeLogin" style="display: none;" text-align="center">Contraseña erronea, siga intentandolo</p>
         <p id="redirigir" style="display: none;">Has agotado tus intentos, vas a ser redirigido a la pagina de inicio</p>
 
-        <form>
+    <form>
 
-        <form class="formularioP">
+        <form class="formularioP" >
             <!-- Almacenamos los datos de usuario en los input dandoles una id para llamarlos desde js -->
             <p id="usuario">Usuario:</p>
             <input id="user" type="text" required>
             <p id="usuario">Contraseña:</p>
-            <input id="pass" type="text" required>
+            <input id="pass" type="password" required>
             <br>
-            <input id="boton" type="button" value="Aceptar" onclick="login()">
+            <input id="boton" type="button" value="Aceptar" onclick="login()"><br>
+            <label for="recordar-equipo">Recordar este equipo</label>
+            <input type="checkbox" name="recordar" id="recordar" checked>
             
         </form>
+    </form>
     </div>
 
-</div>
-    <script src="../js/login-areaPrivada.js"></script>
+
+   
 
 </body>
 </html>
