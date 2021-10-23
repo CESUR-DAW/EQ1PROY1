@@ -84,8 +84,17 @@ function crearEntrada() {
     const datos_entrada = new entrada(titulo, fecha, hora, lugar, precio, numEntradas);
 
     array.push(datos_entrada);
+    guardarEntrada();
+}
 
-    alert(array[0].lugar);
-  
+//esta funcion guarda la array con todos los objetos entrada
+function guardarEntrada() {
+    localStorage.setItem("entradas", JSON.stringify(array));
+}
+
+//esta funcion devuelve la array con todos los objetos entrada guardados
+function obtenerEntrada() {
+    var guardado = localStorage.getItem("entradas");
+    return guardado;
 }
 
