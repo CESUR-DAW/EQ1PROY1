@@ -90,7 +90,9 @@ function crearEntrada() {
 //esta funcion guarda la array con todos los objetos entrada
 function guardarEntrada() {
     localStorage.setItem("entradas", JSON.stringify(array));
+    
 }
+
 
 //esta funcion devuelve la array con todos los objetos entrada guardados
 function obtenerEntrada() {
@@ -98,3 +100,7 @@ function obtenerEntrada() {
     return guardado;
 }
 
+// Esta funcion inserta en el html las entradas
+function mostrarEntradas(){
+    document.getElementById("resumenEntradas").innerHTML = obtenerEntrada();
+}
