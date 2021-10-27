@@ -452,9 +452,9 @@ input {
     text-align: center;
 }
 
-form {
+/* form {
     margin-top: 50px;
-}
+} */
 
 img {
     margin: 0 auto;
@@ -730,7 +730,7 @@ h4 {
     border: 2px solid black;
 }
 
-#aceptar_entrada {
+#aceptar_entrada, #eliminar_entrada {
     width: 300px;
     background-color: gray;
 }
@@ -738,6 +738,33 @@ h4 {
 #aceptar_entrada:hover {
     cursor: pointer;
     background-color: #3193de;
+}
+
+#eliminar_entrada:hover {
+    cursor: pointer;
+    background-color: #e83342;
+}
+
+#numEntradas {
+    width: 300px;
+}
+.entrada {
+    border: 3px solid black;
+    border-radius: 15px;
+    margin: auto;
+    padding: 20px;
+}
+
+.entrada p {
+    margin: 0;
+}
+
+#galeria {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, 400px);
+    justify-content: center;
+    max-width: 100%;
 }
 
 
