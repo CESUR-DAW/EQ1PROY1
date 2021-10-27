@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="../img/foto-equipo.png" />
 </head>
 
-<body onload="añadirEntrada()">
+<body onload="pintarEntradas()">
 
     <div class="encabezado">
         <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -54,20 +54,24 @@
                     <button type="submit" name="comprar" value="comprar" onclick="comprar()"
                         class="formularioInputAfBoton">Comprar</button>
                 </form>
+
+                
                 <!-- formulario comprar -->
                 <form action="">
-
-                    <select name="listaEntradas" id="listaEntradas">
-
-
+                    <select id="listaEntradas">
+                        <option value="id1">Entradas</option>
                     </select>
+                    <input type="button" onclick="entradasDisponibles()" value="Entradas disponibles">
 
+                    <label for="numeroEntradas">Cantidad de entradas que desea comprar</label>
+                    <input type="number" value="numeroEntradas" id="numeroEntradas" >
+                    <input type="button" onclick="cantidadEntradas()" value="Comprar entradas" name="numeroEntradas">
 
-
+<input type="button" value="añadir al carrito" onclick="añadirCarrito()">
                 </form>
-
+                <p id="exito"></p>
             </div>
-
+            <p>Partidos proximos</p>
             <div class="box-1" id="contenido">
                 <!--Inicio box-1-->
                 <p class="formularioP" id="mensajeBienvenida">
@@ -76,14 +80,13 @@
                 <p class="formularioP" id="tipoAficionado">
                     <!-- Muestra el tipo de aficionado-->
                 </p>
-
+                
                 <p class="formularioP" id="galeria">
                     <!-- Muestra las entradas disponibles-->
                 </p>
 
 
-                <script src="../js/areaPrivada.js"></script>
-                <script src="../js/aficionados.js"></script>
+               
 
             </div>
             <!--Fin box-1-->
@@ -91,7 +94,9 @@
 
         </div>
         <!--Fin Inicio contenedor-->
-
+        <script src="../js/areaPrivada.js"></script>
+        <script src="../js/aficionados.js"></script>
+        
 </body>
 
 </html>

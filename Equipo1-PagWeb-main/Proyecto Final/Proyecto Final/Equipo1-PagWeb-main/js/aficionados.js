@@ -46,26 +46,64 @@ function calcularAños(fechaIntroducida) { // nos calcula los años
 }
 
 // formulario comprar
-function añadirEntrada() {
-    // var entrada = localStorage.getItem("entradas");
-    // var crear = document.createElement("option");
-    // optionSelect.value=entrada.titulo;
-    // listaEntradas.add(optionSelect);
-    // contenedor.appendChild(crear);
-    // // crear.innerHTML="<option>" + entrada.titulo+"</option>";
-    // // var contenedor = document.getElementsById("listaEntradas");
-
-    var mySelect=localStorage.getItem("entradas");
-    var optionSelect = document.createElement("option");
-    optionSelect.value="entrada.titulo";
-    mySelect.add(optionSelect);
-    optionSelect.innerHTML="<option>" + entrada.titulo+"</option>";
-   
-  
+function entradasDisponibles() { // añadir entradas al select de aficionado
+    obtenerEntrada();
+    //llamo al elemento select
+   var nuevaEntrada = document.getElementById("listaEntradas");
+  //le doy una nueva opcion
+  var optionSelect = document.createElement("option");
+  // recorremos el array para coger las keys
+  for(i=0; i<=array.length-1; i++) {
+   //añadimos la entrada con el id y el titulo al option
+    optionSelect.text= "ID: "+ array[i].ident +" Partido: "+ array[i].titulo ;
+  }
+  //añado la opcion al select
+  nuevaEntrada.add(optionSelect);  
+//SOLO MUESTRA EL ULTIMO ELEMENTO DEL ARRAY, RECORDATORIO   
 }
 
 
+//Guarda la cantidad de entradas que quieren comprar
+function cantidadEntradas(){
+    //Obtenemos las entradas disponibles
+    obtenerEntrada();
+    //Guardamos el valor que recogemos por el id del input
+    var cantidad = document.getElementById("numeroEntradas").value;
+//Nos aseguramos que la cantidad de entrada que van a compar es menor que las disponibles 
+    if(cantidad > array.length){
+      alert( "La cantidad debe de ser menor que el numero de entradas disponibles");
+    }else{
+        var entradaAñadida = document.getElementById("numeroEntradas").value;
 
+       var exito = document.getElementById("exito");      
+       exito.innerHTML = cantidad + " Entradas añadidas con exito ";
+       exito.appendChild(exito);
+    }
+    return entradaAñadida;
+    // HACER QUE RECONOZCA QUE LA CANTIDAD ES MAYOR QUE 0
+}
+
+
+//Comprobar  entradas
+function comprobarForm(){
+    
+}
+
+//crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
+function crearCarrito(){
+    var carrito = [];
+}
+
+//Debe mostrarse cada vez que compramos una entrada y se debe almacenar en el array carrito el id, titulo, precio y la cantidad
+function mostrarCarrito(){
+
+}
+
+//Suma el precio de todas las entradas, debere recorrer el carrito sumando los precios
+//Cada vez que se sume un elemento debe de mostrar el nuevo total
+function calculoTotal(){
+    
+}
 
 /*COMPRAR*/
 
