@@ -9,9 +9,37 @@
     <title>Área Privada</title>
     <link rel="shortcut icon" href="../img/foto-equipo.png" />
 
+    <style>
+        #numEntradas {
+            width: 300px;
+        }
+        .entrada {
+            border: 3px solid black;
+            border-radius: 15px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .entrada p {
+            margin: 0;
+        }
+
+        #galeria {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, 400px);
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        
+
+       
+    </style>
+
 </head>
 
-<body>
+<body onload="obtenerEntrada()">
 
     <div class="encabezado">
         <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -38,24 +66,25 @@
             Lugar:
             <input class="dato" type="text" id="lugar" name="lugar"><br>
             Precio:
-            <input class="dato" type="text" id="precio" name="precio"><br><br>
+            <input class="dato" type="text" id="precio" name="precio"><br>
             Nº de entradas:
-            <input class="dato" type="text" id="numEntradas" name="numEntradas"><br>
+            <input class="dato" type="text" id="numEntradas" name="numEntradas"><br><br>
             <input type="button" value="Aceptar" id="aceptar_entrada" onclick="crearEntrada()">
+            <input type="button" value="Eliminar" id="eliminar_entrada" onclick="eliminarEntrada()">
+        </form>
+    </div>
+
+    <div id="delete_entrada">
+        <form>
+            
         </form>
     </div>
 
     <div id="galeria">
-        <div>
-
-        </div>
+        
     </div>
-    
-
-
 
     <!-- <h1>Área Privada</h1> -->
-
 
     <!-- <div class="contenedor">
         <div id="jugadoresFav">

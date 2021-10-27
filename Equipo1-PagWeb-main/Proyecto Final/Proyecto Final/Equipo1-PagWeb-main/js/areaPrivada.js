@@ -73,7 +73,6 @@ function validarDatos() {
 }
 
 function crearEntrada() {
-
     var titulo = document.getElementById("titulo").value;
     var fecha = document.getElementById("fecha").value;
     var hora = document.getElementById("hora").value;
@@ -83,18 +82,44 @@ function crearEntrada() {
 
     const datos_entrada = new entrada(titulo, fecha, hora, lugar, precio, numEntradas);
 
-    array.push(datos_entrada);
-    guardarEntrada();
+    guardarEntrada(datos_entrada);
 }
 
-//esta funcion guarda la array con todos los objetos entrada
-function guardarEntrada() {
-    localStorage.setItem("entradas", JSON.stringify(array));
+//esta funcion guarda la array con todos los objetos entrada en localStorage y la manda pintar
+function guardarEntrada(datos) {
+    array.push(datos);
+    if(array.length == 0) {
+        localStorage.setItem("entradas", JSON.stringify(array[0]));
+    }else {
+        localStorage.clear();
+        localStorage.setItem("entradas", JSON.stringify(array));
+        pintarEntradas(datos);
+    }
 }
 
-//esta funcion devuelve la array con todos los objetos entrada guardados
+//esta funcion recupera los datos de localStorage cada vez que se carga la pagina y los manda pintar
 function obtenerEntrada() {
-    var guardado = JSON.parse(localStorage.getItem("entradas"));
-    return guardado;
+    var guardado = localStorage.getItem("entradas");
+    var json = JSON.parse(guardado);
+    if(json != null) {
+        for(i=0; i<=json.length-1; i++) {
+            array.push(json[i]);
+            pintarEntradas(json[i]);
+        }
+    }
 }
+
+//pinta las entradas que se le van pasando
+function pintarEntradas(entradas) {
+    var prueba = document.createElement("div");
+    prueba.setAttribute("class", "entradas");
+    prueba.innerHTML = "<div class='entrada'><p>"+entradas.titulo+"</p><p>dia: "+entradas.fecha+"</p><p>Hora: "+entradas.hora+"</p></div>";
+    var contenedor = document.getElementById("galeria");
+    contenedor.appendChild(prueba);
+}
+
+function eliminarEntrada() {
+    document.getElementById("entrada").style.display = "none";
+}
+
 
