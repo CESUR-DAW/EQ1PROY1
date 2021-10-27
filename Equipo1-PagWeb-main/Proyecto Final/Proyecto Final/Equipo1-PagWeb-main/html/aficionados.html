@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="../img/foto-equipo.png" />
 </head>
 
-<body>
+<body onload="añadirEntrada()">
 
     <div class="encabezado">
         <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -54,13 +54,18 @@
                     <button type="submit" name="comprar" value="comprar" onclick="comprar()"
                         class="formularioInputAfBoton">Comprar</button>
                 </form>
-                <!-- Boton mostrar entradas -->
-                <div class="formularioInputAfBoton, formAf" >
-                  
-                    <button type="button" name="entradas" value="Comprobar entradas" onclick="mostrarEntradas()"
-                    class="formularioInputAfBoton">Comprobar entradas</button>
-     
-                </div>
+                <!-- formulario comprar -->
+                <form action="">
+
+                    <select name="listaEntradas" id="listaEntradas">
+
+
+                    </select>
+
+
+
+                </form>
+
             </div>
 
             <div class="box-1" id="contenido">
@@ -72,18 +77,21 @@
                     <!-- Muestra el tipo de aficionado-->
                 </p>
 
-                <p class="formularioP" id="resumenEntradas">
+                <p class="formularioP" id="galeria">
                     <!-- Muestra las entradas disponibles-->
                 </p>
 
-                <script src="../js/aficionados.js"></script>
+
                 <script src="../js/areaPrivada.js"></script>
+                <script src="../js/aficionados.js"></script>
+
             </div>
             <!--Fin box-1-->
 
 
         </div>
         <!--Fin Inicio contenedor-->
+
 </body>
 
 </html>

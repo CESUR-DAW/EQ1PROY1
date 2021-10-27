@@ -6,7 +6,7 @@
 // function añadirJugador() {
 //     var jugador = document.getElementById('jugador').value;
 //     if(jugador != "" && jugador != "Introduce Jugador") {
-        
+
 //         listaJugadores.push(jugador); //añadimos jugadores
 
 //         document.getElementById('jugador').value = ""; //volvemos a vaciar el input
@@ -49,29 +49,29 @@ class entrada {
         this.hora = hora;
         this.lugar = lugar;
         this.precio = precio;
-        this.numEntradas=numEntradas;
+        this.numEntradas = numEntradas;
     }
 }
 
 function validarDatos() {
     var datos = document.getElementsByClassName("dato");
     var valido = true;
-    for(i=0; i<=datos.length; i++) {
+    for (i = 0; i <= datos.length; i++) {
         datos[i].style.backgroundColor = "white";
         datos[i].style.border = "2px solid black";
-        if(datos[i].value == "") {
+        if (datos[i].value == "") {
             datos[i].style.backgroundColor = "#F6CECE";
             datos[i].style.border = "3px solid red";
             valido = false;
         }
     }
-    if(valido == true) {
+    if (valido == true) {
         return true;
-    }else {
+    } else {
         return false;
     }
 }
-
+ 
 function crearEntrada() {
     var titulo = document.getElementById("titulo").value;
     var fecha = document.getElementById("fecha").value;
@@ -88,9 +88,9 @@ function crearEntrada() {
 //esta funcion guarda la array con todos los objetos entrada en localStorage y la manda pintar
 function guardarEntrada(datos) {
     array.push(datos);
-    if(array.length == 0) {
+    if (array.length == 0) {
         localStorage.setItem("entradas", JSON.stringify(array[0]));
-    }else {
+    } else {
         localStorage.clear();
         localStorage.setItem("entradas", JSON.stringify(array));
         pintarEntradas(datos);
@@ -101,8 +101,8 @@ function guardarEntrada(datos) {
 function obtenerEntrada() {
     var guardado = localStorage.getItem("entradas");
     var json = JSON.parse(guardado);
-    if(json != null) {
-        for(i=0; i<=json.length-1; i++) {
+    if (json != null) {
+        for (i = 0; i <= json.length - 1; i++) {
             array.push(json[i]);
             pintarEntradas(json[i]);
         }
@@ -113,13 +113,18 @@ function obtenerEntrada() {
 function pintarEntradas(entradas) {
     var prueba = document.createElement("div");
     prueba.setAttribute("class", "entradas");
-    prueba.innerHTML = "<div class='entrada'><p>"+entradas.titulo+"</p><p>dia: "+entradas.fecha+"</p><p>Hora: "+entradas.hora+"</p></div>";
+    prueba.innerHTML = "<div class='entrada'><p>" + entradas.titulo + "</p><p>dia: " + entradas.fecha + "</p><p>Hora: " + entradas.hora + "</p></div>";
     var contenedor = document.getElementById("galeria");
     contenedor.appendChild(prueba);
 }
+
 
 function eliminarEntrada() {
     document.getElementById("entrada").style.display = "none";
 }
 
+function mostrarEntradas() {
+    var entradas = localStorage.getItem("entradas");
+    document.getElementsByName("resumenEntradas").innerHTML = pintarEntradas(entradas)
+}
 

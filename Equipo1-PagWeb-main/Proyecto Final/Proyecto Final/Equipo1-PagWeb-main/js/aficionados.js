@@ -45,6 +45,28 @@ function calcularAños(fechaIntroducida) { // nos calcula los años
     return calculoTrunc;
 }
 
+// formulario comprar
+function añadirEntrada() {
+    // var entrada = localStorage.getItem("entradas");
+    // var crear = document.createElement("option");
+    // optionSelect.value=entrada.titulo;
+    // listaEntradas.add(optionSelect);
+    // contenedor.appendChild(crear);
+    // // crear.innerHTML="<option>" + entrada.titulo+"</option>";
+    // // var contenedor = document.getElementsById("listaEntradas");
+
+    var mySelect=localStorage.getItem("entradas");
+    var optionSelect = document.createElement("option");
+    optionSelect.value="entrada.titulo";
+    mySelect.add(optionSelect);
+    optionSelect.innerHTML="<option>" + entrada.titulo+"</option>";
+   
+  
+}
+
+
+
+
 /*COMPRAR*/
 
 function comprar() {
@@ -58,3 +80,4 @@ function actualizarEntradas(entradas) {
 function mostrarCarrito() {
     
 }
+
