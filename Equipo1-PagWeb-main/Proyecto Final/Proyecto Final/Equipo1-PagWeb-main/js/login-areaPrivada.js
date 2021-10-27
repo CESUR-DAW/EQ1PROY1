@@ -45,13 +45,9 @@ function login() {
     } else {
         document.getElementById('mensajeLogin').innerHTML = "Por favor rellene todos los campos";
         document.getElementById('mensajeLogin').style.display = "block";
-    }
-    //validador
-  
-
-  
+    }  
 }
-
+//Esta función valida el checkbox
 function validaCheckbox(checkBox,nombreUsuario,contraseñaUsuario){
     
     checkBox = document.getElementById('recordar');
@@ -63,9 +59,9 @@ function validaCheckbox(checkBox,nombreUsuario,contraseñaUsuario){
     }    
 }
 
-
+//Esta función rellena el formulario con los datos guardados en el localStorage
 function rellenarForm(){
     document.getElementById('user').value= localStorage.getItem("usuarioCheck");
     document.getElementById('pass').value= localStorage.getItem("contraseñaCheck");
 
-}
+} 
