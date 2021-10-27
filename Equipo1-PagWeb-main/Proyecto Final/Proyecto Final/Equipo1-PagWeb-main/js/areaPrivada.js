@@ -49,7 +49,7 @@ class entrada {
         this.hora = hora;
         this.lugar = lugar;
         this.precio = precio;
-        this.numEntradas= "";
+        this.numEntradas=numEntradas;
     }
 }
 
@@ -94,7 +94,7 @@ function guardarEntrada() {
 
 //esta funcion devuelve la array con todos los objetos entrada guardados
 function obtenerEntrada() {
-    var guardado = localStorage.getItem("entradas");
+    var guardado = JSON.parse(localStorage.getItem("entradas"));
     return guardado;
 }
 
