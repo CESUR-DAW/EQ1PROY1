@@ -70,25 +70,37 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
 
 //Debe mostrarse cada vez que compramos una entrada y se debe almacenar en el array carrito el id, titulo, precio y la cantidad
 function mostrarCarrito() {
-comprobarForm();
+    comprobarForm();
+    añadirCarrito();
 }
 
 //Comprobar  entradas
 function comprobarForm() {
-    obtenerEntrada();
-    var cantidad = document.getElementById("numeroEntradas").value
+
+    // recogemos el numero de las entrads del partido
+    var cantidad = document.getElementById("numeroEntradas").value;
     for (i = 0; i <= listaEntradas.length - 1; i++) {
-        if (cantidad <= listaEntradas[i].numEntradas && !isNaN(cantidad) && cantidad.length!=0 && cantidad > 0) {
-            alert("EXITO");
-        }else{
+        //comprobamos que todo este correcto
+        if (cantidad <= listaEntradas[i].numEntradas && !isNaN(cantidad) && cantidad.length != 0 && cantidad > 0) {
+            var exito = document.getElementById("exito");
+            exito.innerHTML = cantidad + " Entradas añadidas con exito ";
+            //devolvemos la cantidad de entradas
+
+        } else {
             alert("FRACASO");
         }
+
     }
+    return cantidad;
 }
 
 //crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
 function añadirCarrito() {
     var carrito = [];
+    comprobarForm();
+    carrito.push(comprobarForm());
+
+
 }
 
 
@@ -112,4 +124,3 @@ function actualizarEntradas(entradas) {
 function mostrarCarrito() {
 
 }
-

@@ -49,10 +49,8 @@
                         <input type="date" name="year" id="year" class="formularioInputAf">
                     </div>
                     <!-- Boton que llama a la funcion BienvenidoAficionados, que recoge los datos introducidos -->
-                    <button type="button" name="enviar" value="enviar" onclick="bienvenidoAficionado()"
-                        class="formularioInputAfBoton">Enviar</button>
-                    <button type="submit" name="comprar" value="comprar" onclick="comprar()"
-                        class="formularioInputAfBoton">Comprar</button>
+                    <button type="button" name="enviar" value="enviar" onclick="bienvenidoAficionado()" class="formularioInputAfBoton">Enviar</button>
+                    <button type="submit" name="comprar" value="comprar" onclick="comprar()" class="formularioInputAfBoton">Comprar</button>
                 </form>
 
 
@@ -64,13 +62,15 @@
                     <div>
                         <label for="numeroEntradas">Cantidad de entradas que desea comprar</label>
                         <input type="number" value="numeroEntradas" id="numeroEntradas">
-                        <input type="button" onclick="cantidadEntradas()" value="Comprar entradas"
-                            name="numeroEntradas">
+                        <input type="button" onclick="comprobarForm()" value="Comprar entradas" name="numeroEntradas">
                     </div>
 
 
                     <input type="button" value="añadir al carrito" onclick="mostrarCarrito()">
+
+
                 </form>
+
                 <p id="exito"></p>
             </div>
             <p>Partidos proximos</p>
