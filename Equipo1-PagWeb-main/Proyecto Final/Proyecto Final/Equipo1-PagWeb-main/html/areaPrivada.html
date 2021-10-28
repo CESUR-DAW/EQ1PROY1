@@ -29,18 +29,24 @@
     <div id="entrada">
         <h4>Crea tu entrada</h4>
         <form>
-            Partido:
-            <input class="dato" type="text" id="titulo" name="titulo"><br>
-            Fecha:
-            <input class="dato" type="date" id="fecha" name="fecha"><br>
-            Hora:
-            <input class="dato" type="time" id="hora" name="hora"><br>
-            Lugar:
-            <input class="dato" type="text" id="lugar" name="lugar"><br>
-            Precio:
-            <input class="dato" type="text" id="precio" name="precio"><br>
-            Nº de entradas:
-            <input class="dato" type="text" id="numEntradas" name="numEntradas"><br><br>
+            <label for="titulo">Partido</label>
+            <input class="dato" type="text" id="titulo" name="titulo" required><br>
+
+            <label for="fecha">Fecha</label>
+            <input class="dato" type="date" id="fecha" name="fecha" required><br>
+
+            <label for="hora">Hora</label>
+            <input class="dato" type="time" id="hora" name="hora" required><br>
+
+            <label for="lugar">Lugar</label>
+            <input class="dato" type="text" id="lugar" name="lugar" required><br>
+
+            <label for="precio">Precio</label>
+            <input class="dato" type="text" id="precio" name="precio" required><br>
+
+            <label for="NºEntradas">Nº de entradas</label>
+            <input class="dato" type="text" id="numEntradas" name="numEntradas" required><br><br>
+
             <input type="button" value="Aceptar" id="aceptar_entrada" onclick="crearEntrada()">
             <input type="button" value="Eliminar" id="eliminar_entrada" onclick="eliminarEntrada()">
         </form>

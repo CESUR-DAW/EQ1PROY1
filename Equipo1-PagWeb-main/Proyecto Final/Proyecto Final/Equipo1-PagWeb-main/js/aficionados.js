@@ -53,9 +53,9 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
   //le doy una nueva opcion
   var optionSelect = document.createElement("option");
   // recorremos el array para coger las keys
-  for(i=0; i<=array.length-1; i++) {
+  for(i=0; i<=listaEntradas.length-1; i++) {
    //añadimos la entrada con el id y el titulo al option
-    optionSelect.text= "ID: "+ array[i].ident +" Partido: "+ array[i].titulo ;
+    optionSelect.text= "ID: "+ listaEntradas[i].ident +" Partido: "+ listaEntradas[i].titulo ;
   }
   //añado la opcion al select
   nuevaEntrada.add(optionSelect);  
@@ -70,7 +70,7 @@ function cantidadEntradas(){
     //Guardamos el valor que recogemos por el id del input
     var cantidad = document.getElementById("numeroEntradas").value;
 //Nos aseguramos que la cantidad de entrada que van a compar es menor que las disponibles 
-    if(cantidad > array.length){
+    if(cantidad > listaEntradas.length){
       alert( "La cantidad debe de ser menor que el numero de entradas disponibles");
     }else{
         var entradaAñadida = document.getElementById("numeroEntradas").value;
