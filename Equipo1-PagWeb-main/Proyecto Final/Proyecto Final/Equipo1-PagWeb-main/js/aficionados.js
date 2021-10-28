@@ -79,19 +79,24 @@ function comprobarForm() {
 
     // recogemos el numero de las entrads del partido
     var cantidad = document.getElementById("numeroEntradas").value;
+    var titulo = document.getElementById("listaEntradas").value;
+
+
+
+    var resultado = "Cantidad: " + cantidad + " " + titulo;
     for (i = 0; i <= listaEntradas.length - 1; i++) {
         //comprobamos que todo este correcto
         if (cantidad <= listaEntradas[i].numEntradas && !isNaN(cantidad) && cantidad.length != 0 && cantidad > 0) {
             var exito = document.getElementById("exito");
             exito.innerHTML = cantidad + " Entradas añadidas con exito ";
             //devolvemos la cantidad de entradas
-
+            return resultado;
         } else {
             alert("FRACASO");
         }
 
     }
-    return cantidad;
+
 }
 
 //crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
@@ -99,7 +104,6 @@ function añadirCarrito() {
     var carrito = [];
     comprobarForm();
     carrito.push(comprobarForm());
-
 
 }
 

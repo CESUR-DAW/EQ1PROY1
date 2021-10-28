@@ -40,7 +40,7 @@
 //     document.getElementById('jugLista').innerHTML = lista;
 // }
 
-var listaEntradas = []; 
+var listaEntradas = [];
 var contador;
 
 class entrada {
@@ -83,9 +83,9 @@ function crearEntrada() {
     if (titulo.length >= 1 && fecha.length >= 1 && lugar.length >= 1 && precio.length >= 1 && numEntradas.length >= 1) {
         const datos_entrada = new entrada(titulo, fecha, hora, lugar, precio, numEntradas);
 
-    guardarEntrada(datos_entrada);
+        guardarEntrada(datos_entrada);
     }
-    
+
 }
 
 //esta funcion guarda la array con todos los objetos entrada en localStorage y la manda pintar
@@ -95,7 +95,7 @@ function guardarEntrada(datos) {
         localStorage.setItem("entradas", JSON.stringify(listaEntradas[0]));
     } else {
         // localStorage.clear();//limpiamos el localStorage
-        localStorage.setItem("entradas", JSON.stringify(listaEntradas));//guardamos la nueva listaEntradas en localStorage
+        localStorage.setItem("entradas", JSON.stringify(listaEntradas)); //guardamos la nueva listaEntradas en localStorage
         pintarEntradas();
     }
 }
@@ -119,9 +119,9 @@ function pintarEntradas() {
     document.getElementById("galeria").innerHTML = "";
     for (i = 0; i <= listaEntradas.length - 1; i++) {
         var prueba = document.createElement("div");
-        var entrada=listaEntradas[i];
+        var entrada = listaEntradas[i];
         prueba.setAttribute("class", "entradas");
-        prueba.innerHTML = "<div id='"+entrada.value+"' class='entrada'><p>Id: "+listaEntradas.indexOf(entrada)+"</p><p>"+entrada.titulo+"</p><p>dia: "+entrada.fecha+"</p><p>Hora: "+entrada.hora+"</p><p>lugar: "+entrada.lugar+"</p><p>Precio: "+entrada.precio+"</p><p>Nºentradas: "+entrada.numEntradas+"</p></div>";
+        prueba.innerHTML = "<div id='" + entrada.value + "' class='entrada'><p>Id: " + listaEntradas.indexOf(entrada) + "</p><p>" + entrada.titulo + "</p><p>dia: " + entrada.fecha + "</p><p>Hora: " + entrada.hora + "</p><p>lugar: " + entrada.lugar + "</p><p>Precio: " + entrada.precio + "</p><p>Nºentradas: " + entrada.numEntradas + "</p></div>";
         var contenedor = document.getElementById("galeria");
         contenedor.appendChild(prueba);
     }
