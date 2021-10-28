@@ -50,7 +50,7 @@ class entrada {
         this.hora = hora;
         this.lugar = lugar;
         this.precio = precio;
-        this.numEntradas = "";
+        this.numEntradas = numEntradas;
         this.ident = Math.floor(Math.random() * 9999)+1000;
     }
 }
