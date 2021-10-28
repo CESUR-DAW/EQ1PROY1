@@ -3,11 +3,11 @@ function bienvenidoAficionado() {
     var year = document.getElementById('year').value; //Recoge en la variable "year", los datos introducidos por el usuario en el campo "Fecha de inscripcion" del formulario.
     var fechaIntroducida = new Date(year); // La fecha pasada por date la desglosa
     var calculoAños = calcularAños(fechaIntroducida);
-    
+
     if (nombre.length > 0 && year.length > 0 && calculoAños >= 0) {
         mostrarMensaje(nombre, calculoAños);
         mostrarTipoAficionado(calculoAños);
-    }else{
+    } else {
         document.getElementById('mensajeBienvenida').innerHTML = "Introduzca datos validos.";
     }
 }
@@ -25,7 +25,7 @@ function mostrarMensaje(nombre, calculoAños) { // Mostramos el mensaje de bienv
 }
 
 function mostrarTipoAficionado(year) { //Mensaje del tipo aficionado
-    if (year >= 0 && year <= 2 ) {
+    if (year >= 0 && year <= 2) {
         document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo básico";
     } else if (year > 2 && year <= 5) {
         document.getElementById('tipoAficionado').innerHTML = "Usted es un aficionado de tipo Avanzado";
@@ -47,37 +47,39 @@ function calcularAños(fechaIntroducida) { // nos calcula los años
 
 // formulario comprar
 function entradasDisponibles() { // añadir entradas al select de aficionado
+    pintarEntradas();
     obtenerEntrada();
     //llamo al elemento select
-   var nuevaEntrada = document.getElementById("listaEntradas");
-  //le doy una nueva opcion
-  var optionSelect = document.createElement("option");
-  // recorremos el array para coger las keys
-  for(i=0; i<=listaEntradas.length-1; i++) {
-   //añadimos la entrada con el id y el titulo al option
-    optionSelect.text= "ID: "+ listaEntradas[i].ident +" Partido: "+ listaEntradas[i].titulo ;
-  }
-  //añado la opcion al select
-  nuevaEntrada.add(optionSelect);  
-//SOLO MUESTRA EL ULTIMO ELEMENTO DEL ARRAY, RECORDATORIO   
+    var nuevaEntrada = document.getElementById("listaEntradas");
+    //le doy una nueva opcion
+    var optionSelect = document.createElement("option");
+    // recorremos el array para coger las keys
+    for (i = 0; i <= listaEntradas.length - 1; i++) {
+        //añadimos la entrada con el id y el titulo al option
+        optionSelect.innerHTML = "ID: " + listaEntradas.indexOf(listaEntradas[i]) + " Partido: " + listaEntradas[i].titulo;
+        //añado la opcion al select
+        nuevaEntrada.appendChild(optionSelect);
+    }
+
+    //SOLO MUESTRA EL ULTIMO ELEMENTO DEL ARRAY, RECORDATORIO   
 }
 
 
 //Guarda la cantidad de entradas que quieren comprar
-function cantidadEntradas(){
+function cantidadEntradas() {
     //Obtenemos las entradas disponibles
     obtenerEntrada();
     //Guardamos el valor que recogemos por el id del input
     var cantidad = document.getElementById("numeroEntradas").value;
-//Nos aseguramos que la cantidad de entrada que van a compar es menor que las disponibles 
-    if(cantidad > listaEntradas.length){
-      alert( "La cantidad debe de ser menor que el numero de entradas disponibles");
-    }else{
+    //Nos aseguramos que la cantidad de entrada que van a compar es menor que las disponibles 
+    if (cantidad > listaEntradas.length) {
+        alert("La cantidad debe de ser menor que el numero de entradas disponibles");
+    } else {
         var entradaAñadida = document.getElementById("numeroEntradas").value;
 
-       var exito = document.getElementById("exito");      
-       exito.innerHTML = cantidad + " Entradas añadidas con exito ";
-       exito.appendChild(exito);
+        var exito = document.getElementById("exito");
+        exito.innerHTML = cantidad + " Entradas añadidas con exito ";
+        exito.appendChild(exito);
     }
     return entradaAñadida;
     // HACER QUE RECONOZCA QUE LA CANTIDAD ES MAYOR QUE 0
@@ -85,37 +87,37 @@ function cantidadEntradas(){
 
 
 //Comprobar  entradas
-function comprobarForm(){
-    
+function comprobarForm() {
+
 }
 
 //crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
-function crearCarrito(){
+function crearCarrito() {
     var carrito = [];
 }
 
 //Debe mostrarse cada vez que compramos una entrada y se debe almacenar en el array carrito el id, titulo, precio y la cantidad
-function mostrarCarrito(){
+function mostrarCarrito() {
 
 }
 
 //Suma el precio de todas las entradas, debere recorrer el carrito sumando los precios
 //Cada vez que se sume un elemento debe de mostrar el nuevo total
-function calculoTotal(){
-    
+function calculoTotal() {
+
 }
 
 /*COMPRAR*/
 
 function comprar() {
-    
+
 }
 
 function actualizarEntradas(entradas) {
-    
+
 }
 
 function mostrarCarrito() {
-    
+
 }
 

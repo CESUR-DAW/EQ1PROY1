@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="../img/foto-equipo.png" />
 </head>
 
-<body onload="pintarEntradas()">
+<body onload="entradasDisponibles()">
 
     <div class="encabezado">
         <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -55,19 +55,21 @@
                         class="formularioInputAfBoton">Comprar</button>
                 </form>
 
-                
+
                 <!-- formulario comprar -->
                 <form action="">
                     <select id="listaEntradas">
-                        <option value="id1">Entradas</option>
+                        <option hidden select>Entradas Disponibles</option>
                     </select>
-                    <input type="button" onclick="entradasDisponibles()" value="Entradas disponibles">
+                    <div>
+                        <label for="numeroEntradas">Cantidad de entradas que desea comprar</label>
+                        <input type="number" value="numeroEntradas" id="numeroEntradas">
+                        <input type="button" onclick="cantidadEntradas()" value="Comprar entradas"
+                            name="numeroEntradas">
+                    </div>
 
-                    <label for="numeroEntradas">Cantidad de entradas que desea comprar</label>
-                    <input type="number" value="numeroEntradas" id="numeroEntradas" >
-                    <input type="button" onclick="cantidadEntradas()" value="Comprar entradas" name="numeroEntradas">
 
-<input type="button" value="añadir al carrito" onclick="añadirCarrito()">
+                    <input type="button" value="añadir al carrito" onclick="añadirCarrito()">
                 </form>
                 <p id="exito"></p>
             </div>
@@ -80,13 +82,13 @@
                 <p class="formularioP" id="tipoAficionado">
                     <!-- Muestra el tipo de aficionado-->
                 </p>
-                
+
                 <p class="formularioP" id="galeria">
                     <!-- Muestra las entradas disponibles-->
                 </p>
 
 
-               
+
 
             </div>
             <!--Fin box-1-->
@@ -96,7 +98,7 @@
         <!--Fin Inicio contenedor-->
         <script src="../js/areaPrivada.js"></script>
         <script src="../js/aficionados.js"></script>
-        
+
 </body>
 
 </html>
