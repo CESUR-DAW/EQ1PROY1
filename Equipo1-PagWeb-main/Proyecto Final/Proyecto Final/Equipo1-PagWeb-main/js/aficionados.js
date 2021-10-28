@@ -66,41 +66,32 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
 }
 
 
-//Guarda la cantidad de entradas que quieren comprar
-function cantidadEntradas() {
-    //Obtenemos las entradas disponibles
-    obtenerEntrada();
-    //Guardamos el valor que recogemos por el id del input
-    var cantidad = document.getElementById("numeroEntradas").value;
-    //Nos aseguramos que la cantidad de entrada que van a compar es menor que las disponibles 
-    if (cantidad > listaEntradas.length) {
-        alert("La cantidad debe de ser menor que el numero de entradas disponibles");
-    } else {
-        var entradaAñadida = document.getElementById("numeroEntradas").value;
 
-        var exito = document.getElementById("exito");
-        exito.innerHTML = cantidad + " Entradas añadidas con exito ";
-        exito.appendChild(exito);
-    }
-    return entradaAñadida;
-    // HACER QUE RECONOZCA QUE LA CANTIDAD ES MAYOR QUE 0
-}
-
-
-//Comprobar  entradas
-function comprobarForm() {
-
-}
-
-//crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
-function crearCarrito() {
-    var carrito = [];
-}
 
 //Debe mostrarse cada vez que compramos una entrada y se debe almacenar en el array carrito el id, titulo, precio y la cantidad
 function mostrarCarrito() {
-
+comprobarForm();
 }
+
+//Comprobar  entradas
+function comprobarForm() {
+    obtenerEntrada();
+    var cantidad = document.getElementById("numeroEntradas").value
+    for (i = 0; i <= listaEntradas.length - 1; i++) {
+        if (cantidad <= listaEntradas[i].numEntradas && !isNaN(cantidad) && cantidad.length!=0 && cantidad > 0) {
+            alert("EXITO");
+        }else{
+            alert("FRACASO");
+        }
+    }
+}
+
+//crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
+function añadirCarrito() {
+    var carrito = [];
+}
+
+
 
 //Suma el precio de todas las entradas, debere recorrer el carrito sumando los precios
 //Cada vez que se sume un elemento debe de mostrar el nuevo total
