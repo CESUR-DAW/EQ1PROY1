@@ -51,10 +51,11 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
     obtenerEntrada();
     //llamo al elemento select
     var nuevaEntrada = document.getElementById("listaEntradas");
-    //le doy una nueva opcion
-    var optionSelect = document.createElement("option");
+
     // recorremos el array para coger las keys
     for (i = 0; i <= listaEntradas.length - 1; i++) {
+        //le doy una nueva opcion
+        var optionSelect = document.createElement("option");
         //añadimos la entrada con el id y el titulo al option
         optionSelect.innerHTML = "ID: " + listaEntradas.indexOf(listaEntradas[i]) + " Partido: " + listaEntradas[i].titulo;
         //añado la opcion al select
