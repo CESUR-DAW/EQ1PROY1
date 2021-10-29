@@ -78,7 +78,7 @@ function validarDatos() {
 
 //obtiene los valores de los input y crea un objeto entrada con ellos
 function crearEntrada() {
-    //if(validarDatos()) {
+    if(validarDatos()) {
         var titulo = document.getElementById("titulo").value;
         var fecha = document.getElementById("fecha").value;
         var hora = document.getElementById("hora").value;
@@ -89,7 +89,7 @@ function crearEntrada() {
 
         const datos_entrada = new entrada(titulo, fecha, hora, lugar, precio, numEntradas);
         guardarEntrada(datos_entrada);
-    //}
+    }
 }
 
 //esta funcion guarda la array con todos los objetos entrada en localStorage y la manda pintar
