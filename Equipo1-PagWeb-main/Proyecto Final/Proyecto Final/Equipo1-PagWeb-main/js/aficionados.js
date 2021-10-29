@@ -83,7 +83,7 @@ function comprobarForm() {
     var entradasDisponibles = listaEntradas[entradaId].numEntradas;
     //comprobamos que todo este correcto
  
-    if (cantidad <= entradasDisponibles  && !isNaN(cantidad) && cantidad.length != 0 ) {
+    if (cantidad <= entradasDisponibles  && !isNaN(cantidad) && cantidad.length != 0 && cantidad >0  ) {
         var exito = document.getElementById("exito");
         alert("Exito");
         exito.innerHTML = cantidad + " Entradas añadidas con exito ";
