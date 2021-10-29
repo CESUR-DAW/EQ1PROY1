@@ -9,13 +9,6 @@
     <title>Área Privada</title>
     <link rel="shortcut icon" href="../img/foto-equipo.png" />
 
-    <style>
-        .titulo_entrada {
-            text-align: center;
-            padding-bottom: 15px;
-            font-size: 35px;
-        }
-    </style>
 </head>
 
 <body onload="pintarEntradas()">
@@ -36,30 +29,32 @@
     <div id="entrada">
         <h4>Crea tu entrada</h4>
         <form>
-            Partido:
-            <input class="dato" type="text" id="titulo" name="titulo"><br>
-            Fecha:
-            <input class="dato" type="date" id="fecha" name="fecha"><br>
-            Hora:
-            <input class="dato" type="time" id="hora" name="hora"><br>
-            Lugar:
-            <input class="dato" type="text" id="lugar" name="lugar"><br>
-            Precio:
-            <input class="dato" type="text" id="precio" name="precio"><br>
-            Nº de entradas:
-            <input class="dato" type="text" id="numEntradas" name="numEntradas"><br><br>
-            <input type="button" value="Crear" id="aceptar_entrada" onclick="crearEntrada()">
+            <label for="titulo">Partido</label>
+            <input class="dato" type="text" id="titulo" name="titulo" required><br>
+
+            <label for="fecha">Fecha</label>
+            <input class="dato" type="date" id="fecha" name="fecha" required><br>
+
+            <label for="hora">Hora</label>
+            <input class="dato" type="time" id="hora" name="hora" required><br>
+
+            <label for="lugar">Lugar</label>
+            <input class="dato" type="text" id="lugar" name="lugar" required><br>
+
+            <label for="precio">Precio</label>
+            <input class="dato" type="text" id="precio" name="precio" required><br>
+
+            <label for="NºEntradas">Nº de entradas</label>
+            <input class="dato" type="text" id="numEntradas" name="numEntradas" required><br><br>
+
+            <input type="button" value="Aceptar" id="aceptar_entrada" onclick="crearEntrada()">
             <input type="button" value="Eliminar" id="eliminar_entrada" onclick="eliminarEntrada()">
         </form>
     </div>
 
-    <div id="borrar_entrada" style="display: none;">
-        <h4>Eliminar entradas</h4>
+    <div id="delete_entrada">
         <form>
-            Introduce una Id:
-            <input id="id_borrar" type="text" name="id_entrada"><br><br>
-            <input id="eliminar_entrada" type="button" name="borrar_entrada" value="Eliminar" onclick="borrarEntrada()">
-            <input id="aceptar_entrada" type="button" name="volver" value="Volver" onclick="showEntrada()">
+            
         </form>
     </div>
 
