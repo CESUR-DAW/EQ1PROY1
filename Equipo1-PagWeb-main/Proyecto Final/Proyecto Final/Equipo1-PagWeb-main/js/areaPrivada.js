@@ -127,10 +127,29 @@ function pintarEntradas() {
     }
 }
 
-function eliminarEntrada() {
-    document.getElementById("entrada").style.display = "none";
+//elimina la entrada seleccionada de la array y de localStorage
+function borrarEntrada() {
+    var id_borrar = document.getElementById("id_borrar").value;
+    for(i=0; i<=listaEntradas.length-1; i++) {
+        if(listaEntradas[i].ident == id_borrar) {
+            listaEntradas.splice(i, 1);
+            localStorage.removeItem("entradas");
+            localStorage.setItem("entradas", JSON.stringify(listaEntradas));
+            document.getElementById(""+id_borrar).remove();
+            document.getElementById("id_borrar").value = "";
+            pintarEntradas();
+        }
+    }
 }
 
+//quita el cuadro de crear entrada y muestra el de eliminar entradas
+function eliminarEntrada() {
+    document.getElementById("entrada").style.display = "none";
+    document.getElementById("borrar_entrada").style.display = "block";
+}
 
-//     var jugador = document.getElementById('jugador').value;
-//     var indice = listaJugadores.indexOf(jugador);
+//quita el cuadro de eliminar entrada y muestra el de crear entradas
+function showEntrada() {
+    document.getElementById("entrada").style.display = "block";
+    document.getElementById("borrar_entrada").style.display = "none";
+}
