@@ -50,7 +50,7 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
     pintarEntradas();
     obtenerEntrada();
     //llamo al elemento select
-    var nuevaEntrada = document.getElementById("listaEntradas");
+    var nuevaEntrada = document.getElementById("cartelera");
 
     // recorremos el array para coger las keys
     for (i = 0; i <= listaEntradas.length - 1; i++) {
@@ -79,15 +79,18 @@ function comprobarForm() {
 
     // recogemos el numero de las entrads del partido
     var cantidad = document.getElementById("numeroEntradas").value;
-    var titulo = document.getElementById("listaEntradas").value;
+    var titulo = document.getElementById("cartelera").value;
+    var indice = listaEntradas.indexOf(titulo);
 
 
 
     var resultado = "Cantidad: " + cantidad + " " + titulo;
     for (i = 0; i <= listaEntradas.length - 1; i++) {
+
         //comprobamos que todo este correcto
         if (cantidad <= listaEntradas[i].numEntradas && !isNaN(cantidad) && cantidad.length != 0 && cantidad > 0) {
-            var exito = document.getElementById("exito");
+            // var exito = document.getElementById("exito");
+            alert("Exito");
             exito.innerHTML = cantidad + " Entradas añadidas con exito ";
             //devolvemos la cantidad de entradas
             return resultado;
@@ -96,6 +99,17 @@ function comprobarForm() {
         }
 
     }
+    //     var jugador = document.getElementById('jugador').value;
+//     var indice = listaJugadores.indexOf(jugador);
+
+//     if (indice > -1) { // Vemos que funciona bien por que si es -1 significa que no lo encuentra
+//         listaJugadores.splice(indice, 1); // borramos el jugar del listaEntradas
+
+//     }
+//     document.getElementById('jugador').value = ""; //volvemos a vaciar el input
+//     mostrarLista();
+//     return listaJugadores;
+// }
 
 }
 
