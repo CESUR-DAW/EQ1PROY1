@@ -72,7 +72,7 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
 //Debe mostrarse cada vez que compramos una entrada y se debe almacenar en el array carrito el id, titulo, precio y la cantidad
 function mostrarCarrito() {
     comprobarForm();
-    añadirCarrito();
+
 }
 
 //Comprobar  entradas
@@ -81,12 +81,15 @@ function comprobarForm() {
     var cantidad = parseInt(document.getElementById("numeroEntradas").value);
     var entradaId = document.getElementById("cartelera").value;
     var entradasDisponibles = listaEntradas[entradaId].numEntradas;
+    
     //comprobamos que todo este correcto
- 
-    if (cantidad <= entradasDisponibles  && !isNaN(cantidad) && cantidad.length != 0 && cantidad >0  ) {
+
+    if (cantidad <= entradasDisponibles && !isNaN(cantidad) && cantidad.length != 0 && cantidad > 0) {
         var exito = document.getElementById("exito");
         alert("Exito");
         exito.innerHTML = cantidad + " Entradas añadidas con exito ";
+        añadirCarrito(entradaId, cantidad);
+
         //devolvemos la cantidad de entradas         
     } else {
         alert("FRACASO");
@@ -94,21 +97,23 @@ function comprobarForm() {
 }
 
 
-
-function obtener() {
-
-
-
-}
-
-
+// id de la entrada, el título, el precio y la cantidad.
 
 //crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
-function añadirCarrito() {
+function añadirCarrito(id, cantidad) {
     var carrito = [];
-    comprobarForm();
-    carrito.push(comprobarForm());
-
+    
+    var titulo = listaEntradas[id].titulo;
+    var precio = listaEntradas[id].precio;
+    const ticket = {
+        Id: id,
+        Nombre: titulo,
+        Precio: precio,
+        Cantidad: cantidad 
+      };
+      console.log(ticket);
+    carrito.push(ticket);
+    console.log(carrito);
 }
 
 
