@@ -56,16 +56,26 @@ class entrada {
 
 function validarDatos() {
     var datos = document.getElementsByClassName("dato");
+    
     var valido = true;
-    for (i = 0; i <= datos.length; i++) {
-        datos[i].style.backgroundColor = "white";
+    for (i = 0; i <= datos.length-1; i++) {
+        datos[i].style.backgroundColor = "#FFF";
         datos[i].style.border = "2px solid black";
         if (datos[i].value == "") {
             datos[i].style.backgroundColor = "#F6CECE";
             datos[i].style.border = "3px solid red";
             valido = false;
+        }else if(datos[i].id == "precio" && datos[i].value <= 0) {
+            datos[i].style.backgroundColor = "#F6CECE";
+            datos[i].style.border = "3px solid red";
+            valido = false;
+        }else if(datos[i].id == "numEntradas" && datos[i].value <= 0) {
+            datos[i].style.backgroundColor = "#F6CECE";
+            datos[i].style.border = "3px solid red";
+            valido = false;
         }
     }
+
     if (valido == true) {
         return true;
     } else {
@@ -74,18 +84,17 @@ function validarDatos() {
 }
 
 function crearEntrada() {
-    var titulo = document.getElementById("titulo").value;
-    var fecha = document.getElementById("fecha").value;
-    var hora = document.getElementById("hora").value;
-    var lugar = document.getElementById("lugar").value;
-    var precio = document.getElementById("precio").value;
-    var numEntradas = document.getElementById("numEntradas").value;
-    if (titulo.length >= 1 && fecha.length >= 1 && lugar.length >= 1 && precio.length >= 1 && numEntradas.length >= 1) {
-        const datos_entrada = new entrada(titulo, fecha, hora, lugar, precio, numEntradas);
+    if(validarDatos()) {
+        var titulo = document.getElementById("titulo").value;
+        var fecha = document.getElementById("fecha").value;
+        var hora = document.getElementById("hora").value;
+        var lugar = document.getElementById("lugar").value;
+        var precio = document.getElementById("precio").value;
+        var numEntradas = document.getElementById("numEntradas").value;
 
+        const datos_entrada = new entrada(titulo, fecha, hora, lugar, precio, numEntradas);
         guardarEntrada(datos_entrada);
     }
-
 }
 
 //esta funcion guarda la array con todos los objetos entrada en localStorage y la manda pintar
@@ -121,7 +130,7 @@ function pintarEntradas() {
         var prueba = document.createElement("div");
         var entrada = listaEntradas[i];
         prueba.setAttribute("class", "entradas");
-        prueba.innerHTML = "<div id='" + entrada.value + "' class='entrada'><p>Id: " + listaEntradas.indexOf(entrada) + "</p><p>" + entrada.titulo + "</p><p>dia: " + entrada.fecha + "</p><p>Hora: " + entrada.hora + "</p><p>lugar: " + entrada.lugar + "</p><p>Precio: " + entrada.precio + "</p><p>Nºentradas: " + entrada.numEntradas + "</p></div>";
+        prueba.innerHTML = "<div id='" + listaEntradas.indexOf(entrada) + "' class='entrada'><p>Id: " + listaEntradas.indexOf(entrada) + "</p><p>" + entrada.titulo + "</p><p>dia: " + entrada.fecha + "</p><p>Hora: " + entrada.hora + "</p><p>lugar: " + entrada.lugar + "</p><p>Precio: " + entrada.precio + "</p><p>Nºentradas: " + entrada.numEntradas + "</p></div>";
         var contenedor = document.getElementById("galeria");
         contenedor.appendChild(prueba);
     }
@@ -131,7 +140,7 @@ function pintarEntradas() {
 function borrarEntrada() {
     var id_borrar = document.getElementById("id_borrar").value;
     for(i=0; i<=listaEntradas.length-1; i++) {
-        if(listaEntradas[i].ident == id_borrar) {
+        if(i == id_borrar) {
             listaEntradas.splice(i, 1);
             localStorage.removeItem("entradas");
             localStorage.setItem("entradas", JSON.stringify(listaEntradas));
