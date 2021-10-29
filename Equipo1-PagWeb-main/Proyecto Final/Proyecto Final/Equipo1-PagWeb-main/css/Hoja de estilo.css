@@ -711,7 +711,7 @@ img {
     margin-bottom: 50px;
 }
 
-#entrada {
+#entrada, #borrar_entrada {
     margin: auto;
     margin-bottom: 100px;
     width: 740px;
