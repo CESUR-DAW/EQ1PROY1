@@ -50,7 +50,7 @@ class entrada {
         this.hora = hora;
         this.lugar = lugar;
         this.precio = precio;
-        this.numEntradas = numEntradas;
+        this.numEntradas = parseInt(numEntradas);
     }
 }
 

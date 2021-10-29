@@ -56,13 +56,14 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
     for (i = 0; i <= listaEntradas.length - 1; i++) {
         //le doy una nueva opcion
         var optionSelect = document.createElement("option");
+        optionSelect.setAttribute("value", listaEntradas.indexOf(listaEntradas[i]));
         //añadimos la entrada con el id y el titulo al option
         optionSelect.innerHTML = "ID: " + listaEntradas.indexOf(listaEntradas[i]) + " Partido: " + listaEntradas[i].titulo;
         //añado la opcion al select
         nuevaEntrada.appendChild(optionSelect);
     }
 
-    //SOLO MUESTRA EL ULTIMO ELEMENTO DEL ARRAY, RECORDATORIO   
+
 }
 
 
@@ -76,42 +77,31 @@ function mostrarCarrito() {
 
 //Comprobar  entradas
 function comprobarForm() {
-
     // recogemos el numero de las entrads del partido
-    var cantidad = document.getElementById("numeroEntradas").value;
-    var titulo = document.getElementById("cartelera").value;
-    var indice = listaEntradas.indexOf(titulo);
-
-
-
-    var resultado = "Cantidad: " + cantidad + " " + titulo;
-    for (i = 0; i <= listaEntradas.length - 1; i++) {
-
-        //comprobamos que todo este correcto
-        if (cantidad <= listaEntradas[i].numEntradas && !isNaN(cantidad) && cantidad.length != 0 && cantidad > 0) {
-            // var exito = document.getElementById("exito");
-            alert("Exito");
-            exito.innerHTML = cantidad + " Entradas añadidas con exito ";
-            //devolvemos la cantidad de entradas
-            return resultado;
-        } else {
-            alert("FRACASO");
-        }
-
+    var cantidad = parseInt(document.getElementById("numeroEntradas").value);
+    var entradaId = document.getElementById("cartelera").value;
+    var entradasDisponibles = listaEntradas[entradaId].numEntradas;
+    //comprobamos que todo este correcto
+ 
+    if (cantidad <= entradasDisponibles  && !isNaN(cantidad) && cantidad.length != 0 ) {
+        var exito = document.getElementById("exito");
+        alert("Exito");
+        exito.innerHTML = cantidad + " Entradas añadidas con exito ";
+        //devolvemos la cantidad de entradas         
+    } else {
+        alert("FRACASO");
     }
-    //     var jugador = document.getElementById('jugador').value;
-//     var indice = listaJugadores.indexOf(jugador);
+}
 
-//     if (indice > -1) { // Vemos que funciona bien por que si es -1 significa que no lo encuentra
-//         listaJugadores.splice(indice, 1); // borramos el jugar del listaEntradas
 
-//     }
-//     document.getElementById('jugador').value = ""; //volvemos a vaciar el input
-//     mostrarLista();
-//     return listaJugadores;
-// }
+
+function obtener() {
+
+
 
 }
+
+
 
 //crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
 function añadirCarrito() {
