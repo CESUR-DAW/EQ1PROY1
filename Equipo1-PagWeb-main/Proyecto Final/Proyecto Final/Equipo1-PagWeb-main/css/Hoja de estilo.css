@@ -711,7 +711,7 @@ img {
     margin-bottom: 50px;
 }
 
-#entrada {
+#entrada, #borrar_entrada {
     margin: auto;
     margin-bottom: 100px;
     width: 740px;
@@ -765,6 +765,12 @@ h4 {
     grid-template-columns: repeat(auto-fill, 400px);
     justify-content: center;
     max-width: 100%;
+}
+
+.titulo_entrada {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 35px;
 }
 
 
