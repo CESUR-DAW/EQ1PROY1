@@ -87,7 +87,7 @@ function mostrarCarrito() {
     // creamos un nuevo div
     var ticketNuevo = document.createElement("div");
     ticketNuevo.setAttribute("class", "entradas");
-    ticketNuevo.innerHTML = "<p>Entradas añadidas al carrito: </p> <div id='' class='entrada'> <p>Id: " + id + "</p><p> Titulo: " + nombre + "</p><p>Precio: " + precio + "</p><p>Nºentradas: " + cantidad + "</p> </div>";
+    ticketNuevo.innerHTML = " <div id='' class='entrada'> <p>Id: " + id + "</p><p> Titulo: " + nombre + "</p><p>Precio: " + precio + "</p><p>Nºentradas: " + cantidad + "</p> </div>";
     NuevoDiv.appendChild(ticketNuevo);
 
 }
@@ -138,7 +138,7 @@ function añadirCarrito() {
         return ticket;
     }else{
         alert("Cantidad introducida incorrecta");
-        return ticket;
+       
     }
 
 }
@@ -149,6 +149,8 @@ function añadirCarrito() {
 //Cada vez que se sume un elemento debe de mostrar el nuevo total
 function calculoTotal() {
 
+    
+
 }
 
 /*COMPRAR*/
@@ -157,7 +159,7 @@ function comprar() {
     var idEntradas = document.getElementById("cartelera").value
     var entradasUsuario = document.getElementById("numeroEntradas").value;
     if (comprobarForm(entradasUsuario)==true) {
-            actualizarEntradas(idEntradas, entradasUsuario); //lamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
+            actualizarEntradas(idEntradas, entradasUsuario); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
     }else{
         document.getElementById('resumenEntradas').innerHTML ="Compra fallida, introduzca un numero de entradas correcto.";
  
@@ -170,6 +172,7 @@ function actualizarEntradas(idEntrada, entradasAComprar) {
     listaEntradas[idEntrada].numEntradas = entradasDisponibles; //actualizamos el array con el numero de entradas que tieene ahora el partido
     guardarEntrada(listaEntradas[idEntrada]); // llamamos a la funcion gurdarEntrada para que actualice el valor del array en el localstorage
     pintarEntradas();
-    document.getElementById('resumenEntradas').innerHTML = mostrarCarrito() + "Compra realizada con éxito/Gracias por su compra";
+    document.getElementById('resumenEntradas').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
+    
 
 }
