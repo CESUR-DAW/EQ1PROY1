@@ -158,7 +158,3 @@ function actualizarEntradas(idEntrada,entradasAComprar) {
     pintarEntradas();
     
 }
-
-function mostrarCarrito() {
-
-}
