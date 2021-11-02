@@ -71,19 +71,7 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
 
 //Debe mostrarse cada vez que compramos una entrada y se debe almacenar en el array carrito el id, titulo, precio y la cantidad
 function mostrarCarrito() {
-    añadirCarrito();
-    //llamamos al div del html
-    var NuevoDiv = document.getElementById("nuevoTicket");
-
-    //recoremos el array para coger los tickets
-    for (let i = 0; i < carrito.length; i++) {
-        var ticketss = JSON.stringify("ticket");
-        // creamos un nuevo div
-        var ticketNuevo = document.createElement("div");
-        ticketNuevo.innerHTML = "<p>" + +"</p>";
-
-        NuevoDiv.appendChild(ticketNuevo);
-    }
+    comprobarForm();
 
 }
 
@@ -93,13 +81,14 @@ function comprobarForm() {
     var cantidad = parseInt(document.getElementById("numeroEntradas").value);
     var entradaId = document.getElementById("cartelera").value;
     var entradasDisponibles = listaEntradas[entradaId].numEntradas;
-
+    
     //comprobamos que todo este correcto
 
     if (cantidad <= entradasDisponibles && !isNaN(cantidad) && cantidad.length != 0 && cantidad > 0) {
         var exito = document.getElementById("exito");
+        alert("Exito");
         exito.innerHTML = cantidad + " Entradas añadidas con exito ";
-
+        añadirCarrito(entradaId, cantidad);
 
         //devolvemos la cantidad de entradas         
     } else {
@@ -111,25 +100,20 @@ function comprobarForm() {
 // id de la entrada, el título, el precio y la cantidad.
 
 //crear carrito si el form es correcto debe almacenar el id, titulo, precio y la cantidad
-function añadirCarrito() {
-    var cantidad = parseInt(document.getElementById("numeroEntradas").value);
-    var entradaId = document.getElementById("cartelera").value;
-    var titulo = listaEntradas[entradaId].titulo;
-    var precio = listaEntradas[entradaId].precio;
+function añadirCarrito(id, cantidad) {
     var carrito = [];
-
-    //creamos el objeto con los valores del comprobarForm()
+    
+    var titulo = listaEntradas[id].titulo;
+    var precio = listaEntradas[id].precio;
     const ticket = {
-        Id: entradaId,
-        Cantidad: cantidad,
+        Id: id,
         Nombre: titulo,
-        Precio: precio
-
-    };
-
+        Precio: precio,
+        Cantidad: cantidad 
+      };
+      console.log(ticket);
     carrito.push(ticket);
-
-    return ticket;
+    console.log(carrito);
 }
 
 
