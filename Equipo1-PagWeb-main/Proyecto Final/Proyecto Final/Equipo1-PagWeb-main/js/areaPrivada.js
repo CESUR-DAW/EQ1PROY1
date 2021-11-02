@@ -147,7 +147,6 @@ function borrarEntrada() {
             document.getElementById(""+id_borrar).remove();
             document.getElementById("id_borrar").value = "";
             pintarEntradas();
-            eliminarEntrada();
         }
     }
 }
@@ -156,15 +155,6 @@ function borrarEntrada() {
 function eliminarEntrada() {
     document.getElementById("entrada").style.display = "none";
     document.getElementById("borrar_entrada").style.display = "block";
-    document.getElementById("id_borrar").innerHTML = "";
-
-    for(i=0; i<=listaEntradas.length-1; i++) {
-        var opcion = document.createElement("option");
-        opcion.setAttribute("id", i);
-        opcion.innerHTML = i;
-        var select = document.getElementById("id_borrar");
-        select.appendChild(opcion);
-    }
 }
 
 //quita el cuadro de eliminar entrada y muestra el de crear entradas
