@@ -49,7 +49,7 @@ class entrada {
         this.fecha = fecha;
         this.hora = hora;
         this.lugar = lugar;
-        this.precio = precio;
+        this.precio = parseInt(precio);
         this.numEntradas = parseInt(numEntradas);
     }
 }
