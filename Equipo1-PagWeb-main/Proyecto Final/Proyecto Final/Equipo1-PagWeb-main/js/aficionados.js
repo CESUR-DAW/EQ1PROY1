@@ -87,7 +87,7 @@ function mostrarCarrito() {
         // creamos un nuevo div
         var ticketNuevo = document.createElement("div");
         ticketNuevo.setAttribute("class", "entradas");
-        ticketNuevo.innerHTML = "<div id='' class='entrada'> <p>Id: " + id + "</p><p> Titulo: " + nombre + "</p><p>Precio: " + precio + "</p><p>Nºentradas: " + cantidad + "</p> </div>";
+        ticketNuevo.innerHTML = "<p>Entradas añadidas al carrito: </p> <div id='' class='entrada'> <p>Id: " + id + "</p><p> Titulo: " + nombre + "</p><p>Precio: " + precio + "</p><p>Nºentradas: " + cantidad + "</p> </div>";
         NuevoDiv.appendChild(ticketNuevo);
         
 }
