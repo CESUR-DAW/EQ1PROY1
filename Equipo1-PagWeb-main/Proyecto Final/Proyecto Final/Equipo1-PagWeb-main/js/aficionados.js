@@ -72,21 +72,26 @@ function entradasDisponibles() { // añadir entradas al select de aficionado
 
 //Debe mostrarse cada vez que compramos una entrada y se debe almacenar en el array carrito el id, titulo, precio y la cantidad
 function mostrarCarrito() {
-    añadirCarrito();
+
+    const ticketss = añadirCarrito();
+ 
     //llamamos al div del html
     var NuevoDiv = document.getElementById("nuevoTicket");
-
     //recoremos el array para coger los tickets
-    for (let i = 0; i < carrito.length; i++) {
-        var ticketss = JSON.stringify("ticket");
+    
+        var id = JSON.stringify(ticketss.Id);
+        var cantidad = JSON.stringify(ticketss.Cantidad);
+        var nombre = JSON.stringify(ticketss.Nombre);
+        var precio = JSON.stringify(ticketss.Precio);
+       
         // creamos un nuevo div
         var ticketNuevo = document.createElement("div");
-        ticketNuevo.innerHTML = "<p>" + +"</p>";
-
+        ticketNuevo.setAttribute("class", "entradas");
+        ticketNuevo.innerHTML = "<div id='' class='entrada'> <p>Id: " + id + "</p><p> Titulo: " + nombre + "</p><p>Precio: " + precio + "</p><p>Nºentradas: " + cantidad + "</p> </div>";
         NuevoDiv.appendChild(ticketNuevo);
-    }
-
+        
 }
+
 
 //Comprobar  entradas
 function comprobarForm() {
