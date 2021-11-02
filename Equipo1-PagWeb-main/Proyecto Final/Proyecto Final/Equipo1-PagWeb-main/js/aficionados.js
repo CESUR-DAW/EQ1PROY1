@@ -161,5 +161,5 @@ function actualizarEntradas(idEntrada,entradasAComprar) {
     guardarEntrada(listaEntradas[idEntrada]);
     console.log(listaEntradas);
     pintarEntradas();
-    
+    document.getElementById('resumenEntradas').innerHTML="Adri se la chupa a Lino.Compra realizada con éxito/Gracias por su compra";
 }
