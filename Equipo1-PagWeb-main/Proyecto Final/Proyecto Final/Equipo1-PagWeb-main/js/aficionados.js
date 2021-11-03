@@ -1,3 +1,5 @@
+var carrito = [];
+
 function bienvenidoAficionado() {
     var nombre = document.getElementById('nombre').value; //Recoge en la variable "nombre", los datos introducidos por el usuario en el campo "nombre" del formulario.
     var year = document.getElementById('year').value; //Recoge en la variable "year", los datos introducidos por el usuario en el campo "Fecha de inscripcion" del formulario.
@@ -79,10 +81,10 @@ function mostrarCarrito() {
     var NuevoDiv = document.getElementById("nuevoTicket");
     //recoremos el array para coger los tickets
 
-    var id = JSON.stringify(ticketss.Id);
-    var cantidad = JSON.stringify(ticketss.Cantidad);
-    var nombre = JSON.stringify(ticketss.Nombre);
-    var precio = JSON.stringify(ticketss.Precio);
+    var id = JSON.stringify(ticketss.id);
+    var cantidad = JSON.stringify(ticketss.cantidad);
+    var nombre = JSON.stringify(ticketss.nombre);
+    var precio = JSON.stringify(ticketss.precio);
 
     // creamos un nuevo div
     var ticketNuevo = document.createElement("div");
@@ -90,6 +92,8 @@ function mostrarCarrito() {
     ticketNuevo.innerHTML = " <div id='' class='entrada'> <p>Id: " + id + "</p><p> Titulo: " + nombre + "</p><p>Precio: " + precio + "</p><p>Nºentradas: " + cantidad + "</p> </div>";
     NuevoDiv.appendChild(ticketNuevo);
 
+
+    document.getElementById('resumenEntradas').innerHTML = "<p>Precio total: </p>" + calculoTotal();
 }
 
 
@@ -101,11 +105,8 @@ function comprobarForm(numeroEntradas) {
     var entradasDisponibles = listaEntradas[entradaId].numEntradas;
 
     //comprobamos que todo este correcto
-
     if (cantidad <= entradasDisponibles && !isNaN(cantidad) && cantidad.length != 0 && cantidad > 0) {
         return true;
-
-
         //devolvemos la cantidad de entradas         
     } else {
         return false;
@@ -122,25 +123,19 @@ function añadirCarrito() {
     if (comprobarForm(cantidad) == true) {
         var titulo = listaEntradas[entradaId].titulo;
         var precio = listaEntradas[entradaId].precio;
-        var carrito = [];
 
         //creamos el objeto con los valores del comprobarForm()
         const ticket = {
-            Id: entradaId,
-            Cantidad: cantidad,
-            Nombre: titulo,
-            Precio: precio
-
+            id: entradaId,
+            cantidad: parseInt(cantidad),
+            nombre: titulo,
+            precio: parseFloat(precio)
         };
-
         carrito.push(ticket);
-
         return ticket;
-    }else{
+    } else {
         alert("Cantidad introducida incorrecta");
-       
     }
-
 }
 
 
@@ -148,21 +143,30 @@ function añadirCarrito() {
 //Suma el precio de todas las entradas, debere recorrer el carrito sumando los precios
 //Cada vez que se sume un elemento debe de mostrar el nuevo total
 function calculoTotal() {
-
-    
-
+    var precioTotal = 0;
+    for (var i = 0; i <= carrito.length - 1; i++) {
+        var cantidad = carrito[i].cantidad;
+        var precio = carrito[i].precio;
+        precioTotal += cantidad * precio;
+    }
+    return precioTotal;
 }
 
 /*COMPRAR*/
 
 function comprar() {
-    var idEntradas = document.getElementById("cartelera").value
-    var entradasUsuario = document.getElementById("numeroEntradas").value;
-    if (comprobarForm(entradasUsuario)==true) {
-            actualizarEntradas(idEntradas, entradasUsuario); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
-    }else{
-        document.getElementById('resumenEntradas').innerHTML ="Compra fallida, introduzca un numero de entradas correcto.";
- 
+
+    for (var i = 0; i <= carrito.length - 1; i++) {
+        var nombre = carrito[i].titulo;
+        var nombre = carrito[i].numEntradas;
+    }
+
+
+    if (comprobarForm(entradasUsuario) == true) {
+        actualizarEntradas(idEntradas, entradasUsuario); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
+    } else {
+        document.getElementById('nuevoTicket').innerHTML = "Compra fallida, introduzca un numero de entradas correcto.";
+
     }
 }
 
@@ -172,7 +176,7 @@ function actualizarEntradas(idEntrada, entradasAComprar) {
     listaEntradas[idEntrada].numEntradas = entradasDisponibles; //actualizamos el array con el numero de entradas que tieene ahora el partido
     guardarEntrada(listaEntradas[idEntrada]); // llamamos a la funcion gurdarEntrada para que actualice el valor del array en el localstorage
     pintarEntradas();
-    document.getElementById('resumenEntradas').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
-    
+    document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
+
 
 }
