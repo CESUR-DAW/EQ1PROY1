@@ -158,7 +158,7 @@ function comprar() {
 
     for (var i = 0; i <= carrito.length - 1; i++) {
         var nombre = carrito[i].titulo;
-        var nombre = carrito[i].numEntradas;
+        var numEntradas = carrito[i].numEntradas;
     }
 
 
