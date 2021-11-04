@@ -157,9 +157,9 @@ function calculoTotal() {
 
 function comprar() {
 
-
-    actualizarEntradas(); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
     crearPdf();
+    actualizarEntradas(); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
+
 }
 
 function actualizarEntradas() {
