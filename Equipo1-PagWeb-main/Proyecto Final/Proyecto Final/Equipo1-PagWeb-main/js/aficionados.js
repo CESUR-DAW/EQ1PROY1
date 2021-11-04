@@ -159,7 +159,7 @@ function comprar() {
 
 
     actualizarEntradas(); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
-
+    crearPdf();
 }
 
 function actualizarEntradas() {
@@ -181,4 +181,26 @@ function actualizarEntradas() {
 
 
     document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
+}
+
+// prueba pdf
+
+function crearPdf() {
+    //creamos un pdf
+    var doc = new jsPDF();
+    //llamamos al div content del html
+    var elementHTML = $('#content').html();
+
+    var specialElementHandlers = {
+        '#elementH': function(element, renderer) {
+            return true;
+        }
+    };
+    doc.fromHTML(elementHTML, 15, 15, {
+        'width': 170,
+        'elementHandlers': specialElementHandlers
+    });
+
+    // Save the PDF
+    doc.save('sample-document.pdf');
 }

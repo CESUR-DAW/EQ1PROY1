@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AFICIONADOS</title>
     <link rel="shortcut icon" href="../img/foto-equipo.png" />
+    <script src="../js/jquery.js"></script>
+    <!--Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 </head>
 
 <body onload="entradasDisponibles()">
@@ -64,6 +67,7 @@
                         <input type="button" value="añadir al carrito" onclick="mostrarCarrito()">
                         <input type="button" value="comprar" onclick="comprar()">
 
+
                     </div>
 
 
@@ -73,6 +77,7 @@
                 </form>
 
                 <p id="exito"></p>
+
 
                 <div id="resumenEntradas"></div>
 
@@ -96,7 +101,16 @@
 
 
         </div>
-        <div id="nuevoTicket">Carrito</div>
+        <div id="content">
+
+
+            <div id="nuevoTicket">Carrito</div>
+        </div>
+
+        <div id="elementH"></div>
+
+
+
         <!--Fin Inicio contenedor-->
         <p>Partidos proximos</p>
         <div class="formularioP" id="galeria">
@@ -105,6 +119,9 @@
 
         <script src="../js/areaPrivada.js"></script>
         <script src="../js/aficionados.js"></script>
+
+
+
 
 </body>
 
