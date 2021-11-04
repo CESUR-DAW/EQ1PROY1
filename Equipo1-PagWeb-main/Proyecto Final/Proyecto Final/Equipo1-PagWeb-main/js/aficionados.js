@@ -171,20 +171,16 @@ function actualizarEntradas() {
 
         diferenciaEntradas = diferenciaEntradas - carrito[i].cantidad;
         console.log(diferenciaEntradas);
+        listaEntradas[i].numEntradas = diferenciaEntradas;
         guardarEntrada(listaEntradas[i]);
-        //le doy una nueva opcion
-        var optionSelect = document.createElement("option");
-        optionSelect.setAttribute("value", listaEntradas.indexOf(listaEntradas[i]));
-        //añadimos la entrada con el id y el titulo al option
-        optionSelect.innerHTML = "ID: " + listaEntradas.indexOf(listaEntradas[i]) + " Partido: " + listaEntradas[i].titulo;
-        //añado la opcion al select
-        nuevaEntrada.appendChild(optionSelect);
+        listaEntradas.pop();
+        localStorage.setItem('entradas', JSON.stringify(listaEntradas));
     }
-    // entradasDisponibles();
+     entradasDisponibles();
 
 
     document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
-    mos
+    
 }
 
 
