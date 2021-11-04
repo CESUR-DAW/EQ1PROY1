@@ -164,20 +164,24 @@ function comprar() {
 function actualizarEntradas() {
 
     for (var i = 0; i <= carrito.length - 1; i++) {
-        var id = carrito[i].id;
-        listaEntradas[id].numEntradas = listaEntradas[id].numEntradas - carrito[i].cantidad;
-        console.log(listaEntradas[id].numEntradas);
-        console.log(listaEntradas);
-        guardarEntrada(listaEntradas[id]);
+        for (var j = 0; j < listaEntradas.length; j++) {
+            var diferenciaEntradas = listaEntradas[i].numEntradas;
+        }
+        console.log(diferenciaEntradas);
+
+        diferenciaEntradas = diferenciaEntradas - carrito[i].cantidad;
+        console.log(diferenciaEntradas);
+        listaEntradas[i].numEntradas = diferenciaEntradas;
+        guardarEntrada(listaEntradas[i]);
         listaEntradas.pop();
-        localStorage.setItem("entradas", JSON.stringify(listaEntradas));
+        localStorage.setItem('entradas', JSON.stringify(listaEntradas));
     }
      entradasDisponibles();
 
 
     document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
+    
 }
-
 
 
 // var entradasDisponibles = listaEntradas[idEntrada].numEntradas;
