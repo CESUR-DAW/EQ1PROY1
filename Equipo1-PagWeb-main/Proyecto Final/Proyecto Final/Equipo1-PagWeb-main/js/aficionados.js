@@ -121,6 +121,7 @@ function añadirCarrito() {
     var cantidad = parseInt(document.getElementById("numeroEntradas").value);
     var entradaId = document.getElementById("cartelera").value;
     if (comprobarForm(cantidad) == true) {
+        console.log(cantidad);
         var titulo = listaEntradas[entradaId].titulo;
         var precio = listaEntradas[entradaId].precio;
 
@@ -165,24 +166,19 @@ function actualizarEntradas() {
 
     for (var i = 0; i <= carrito.length - 1; i++) {
         var id = carrito[i].id;
-        listaEntradas[id].numEntradas = listaEntradas[id].numEntradas - carrito[i].cantidad;
-        console.log(listaEntradas[id].numEntradas);
-        console.log(listaEntradas);
-        guardarEntrada(listaEntradas[id]);
-        listaEntradas.pop();
-        localStorage.setItem("entradas", JSON.stringify(listaEntradas));
+        if (carrito[i].numEntradas < 0) {
+            document.getElementById('nuevoTicket').innerHTML = "<p>No hay entradas suficientes</p>";
+        } else {
+            listaEntradas[id].numEntradas = listaEntradas[id].numEntradas - carrito[i].cantidad;
+            guardarEntrada(listaEntradas[id]);
+            listaEntradas.pop();
+            localStorage.setItem("entradas", JSON.stringify(listaEntradas));
+            carrito.splice(0, carrito.length);
+        }
+
     }
-     entradasDisponibles();
+    entradasDisponibles();
 
 
     document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
 }
-
-
-
-// var entradasDisponibles = listaEntradas[idEntrada].numEntradas;
-// entradasDisponibles = entradasDisponibles - entradasAComprar; //Restamos a la entrada el numero de entradas que queremos
-// listaEntradas[idEntrada].numEntradas = entradasDisponibles; //actualizamos el array con el numero de entradas que tieene ahora el partido
-// guardarEntrada(listaEntradas[idEntrada]); // llamamos a la funcion gurdarEntrada para que actualice el valor del array en el localstorage
-// pintarEntradas();
-// document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
