@@ -202,5 +202,5 @@ function crearPdf() {
     });
 
     // Save the PDF
-    doc.save('sample-document.pdf');
+    doc.save('TusEntradas.pdf');
 }
