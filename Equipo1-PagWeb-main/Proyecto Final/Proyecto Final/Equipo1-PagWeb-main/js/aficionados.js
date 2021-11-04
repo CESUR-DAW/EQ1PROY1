@@ -79,7 +79,7 @@ function mostrarCarrito() {
 
     //llamamos al div del html
     var NuevoDiv = document.getElementById("nuevoTicket");
-    //recoremos el array para coger los tickets
+    //cogemos los atributos del ticket de carrito
 
     var id = JSON.stringify(ticketss.id);
     var cantidad = JSON.stringify(ticketss.cantidad);
@@ -156,27 +156,41 @@ function calculoTotal() {
 
 function comprar() {
 
+
+    actualizarEntradas(); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
+
+}
+
+function actualizarEntradas() {
+
     for (var i = 0; i <= carrito.length - 1; i++) {
-        var nombre = carrito[i].titulo;
-        var numEntradas = carrito[i].numEntradas;
+        for (var j = 0; j < listaEntradas.length; j++) {
+            var diferenciaEntradas = listaEntradas[i].numEntradas;
+        }
+        console.log(diferenciaEntradas);
+
+        diferenciaEntradas = diferenciaEntradas - carrito[i].cantidad;
+        console.log(diferenciaEntradas);
+        guardarEntrada(listaEntradas[i]);
+        //le doy una nueva opcion
+        var optionSelect = document.createElement("option");
+        optionSelect.setAttribute("value", listaEntradas.indexOf(listaEntradas[i]));
+        //añadimos la entrada con el id y el titulo al option
+        optionSelect.innerHTML = "ID: " + listaEntradas.indexOf(listaEntradas[i]) + " Partido: " + listaEntradas[i].titulo;
+        //añado la opcion al select
+        nuevaEntrada.appendChild(optionSelect);
     }
+    // entradasDisponibles();
 
 
-    if (comprobarForm(entradasUsuario) == true) {
-        actualizarEntradas(idEntradas, entradasUsuario); //llamamos a la funcion actualizar entrada pasandole por parametro el id de la entrada y el numero de entrada que queremos
-    } else {
-        document.getElementById('nuevoTicket').innerHTML = "Compra fallida, introduzca un numero de entradas correcto.";
-
-    }
-}
-
-function actualizarEntradas(idEntrada, entradasAComprar) {
-    var entradasDisponibles = listaEntradas[idEntrada].numEntradas;
-    entradasDisponibles = entradasDisponibles - entradasAComprar; //Restamos a la entrada el numero de entradas que queremos
-    listaEntradas[idEntrada].numEntradas = entradasDisponibles; //actualizamos el array con el numero de entradas que tieene ahora el partido
-    guardarEntrada(listaEntradas[idEntrada]); // llamamos a la funcion gurdarEntrada para que actualice el valor del array en el localstorage
-    pintarEntradas();
     document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
-
-
+    mos
 }
+
+
+// var entradasDisponibles = listaEntradas[idEntrada].numEntradas;
+// entradasDisponibles = entradasDisponibles - entradasAComprar; //Restamos a la entrada el numero de entradas que queremos
+// listaEntradas[idEntrada].numEntradas = entradasDisponibles; //actualizamos el array con el numero de entradas que tieene ahora el partido
+// guardarEntrada(listaEntradas[idEntrada]); // llamamos a la funcion gurdarEntrada para que actualice el valor del array en el localstorage
+// pintarEntradas();
+// document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";

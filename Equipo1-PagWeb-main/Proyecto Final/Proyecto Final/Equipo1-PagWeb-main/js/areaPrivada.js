@@ -56,20 +56,20 @@ class entrada {
 
 function validarDatos() {
     var datos = document.getElementsByClassName("dato");
-    
+
     var valido = true;
-    for (i = 0; i <= datos.length-1; i++) {
+    for (i = 0; i <= datos.length - 1; i++) {
         datos[i].style.backgroundColor = "#FFF";
         datos[i].style.border = "2px solid black";
         if (datos[i].value == "") {
             datos[i].style.backgroundColor = "#F6CECE";
             datos[i].style.border = "3px solid red";
             valido = false;
-        }else if(datos[i].id == "precio" && datos[i].value <= 0) {
+        } else if (datos[i].id == "precio" && datos[i].value <= 0) {
             datos[i].style.backgroundColor = "#F6CECE";
             datos[i].style.border = "3px solid red";
             valido = false;
-        }else if(datos[i].id == "numEntradas" && datos[i].value <= 0) {
+        } else if (datos[i].id == "numEntradas" && datos[i].value <= 0) {
             datos[i].style.backgroundColor = "#F6CECE";
             datos[i].style.border = "3px solid red";
             valido = false;
@@ -84,7 +84,7 @@ function validarDatos() {
 }
 
 function crearEntrada() {
-    if(validarDatos()) {
+    if (validarDatos()) {
         var titulo = document.getElementById("titulo").value;
         var fecha = document.getElementById("fecha").value;
         var hora = document.getElementById("hora").value;
@@ -139,12 +139,12 @@ function pintarEntradas() {
 //elimina la entrada seleccionada de la array y de localStorage
 function borrarEntrada() {
     var id_borrar = document.getElementById("id_borrar").value;
-    for(i=0; i<=listaEntradas.length-1; i++) {
-        if(i == id_borrar) {
+    for (i = 0; i <= listaEntradas.length - 1; i++) {
+        if (i == id_borrar) {
             listaEntradas.splice(i, 1);
             localStorage.removeItem("entradas");
             localStorage.setItem("entradas", JSON.stringify(listaEntradas));
-            document.getElementById(""+id_borrar).remove();
+            document.getElementById("" + id_borrar).remove();
             document.getElementById("id_borrar").value = "";
             pintarEntradas();
         }
