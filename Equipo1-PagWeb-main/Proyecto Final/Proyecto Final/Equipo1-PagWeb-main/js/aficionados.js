@@ -177,7 +177,7 @@ function actualizarEntradas() {
         }
 
     }
-    entradasDisponibles();
+    pintarEntradas();
 
 
     document.getElementById('nuevoTicket').innerHTML = "<p>Compra realizada con éxito</p> <p>Gracias por su compra</p>";
