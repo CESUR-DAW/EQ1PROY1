@@ -40,6 +40,7 @@
 //     document.getElementById('jugLista').innerHTML = lista;
 // }
 
+
 var listaEntradas = [];
 var contador;
 
