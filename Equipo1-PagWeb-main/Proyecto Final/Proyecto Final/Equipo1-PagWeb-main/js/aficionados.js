@@ -196,6 +196,7 @@ function crearPdf() {
             return true;
         }
     };
+    // da formato al pdf
     doc.fromHTML(elementHTML, 15, 15, {
         'width': 170,
         'elementHandlers': specialElementHandlers
