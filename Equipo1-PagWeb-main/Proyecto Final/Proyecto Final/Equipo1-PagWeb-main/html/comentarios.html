@@ -13,10 +13,9 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/comentarios.js"></script>
     <!--Library-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
 </head>
 
-<body>
+<body onload="tabla()">
 
     <div class="encabezado">
         <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -33,6 +32,13 @@
         </div>
     </div>
     <!--FIN Barra de navegacion-->
+
+
+    <table id="users"></table>
+    <p>titulo<input id="titulo" type="text"></p>
+    <p>Comentario <input id="comentario" type="text"></p>
+    <div id="prueba"> </div>
+    <button onclick="exportadatos()">boton</button>
 
 </body>
 
