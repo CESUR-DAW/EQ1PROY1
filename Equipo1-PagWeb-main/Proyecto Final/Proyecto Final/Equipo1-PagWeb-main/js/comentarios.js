@@ -2,13 +2,26 @@ function tabla() {
     fetch("https://jsonplaceholder.typicode.com/users")
         .then(response => response.json())
         .then(json => {
-            let usuario = `<tr><th>Name</th><th>Email</th></tr>`;
+            var usuario = `<tr><th>ID</th><th>Nombre</th><th>Apellidos</th></tr>`;
             json.forEach(user => {
-                usuario += `<tr><td>${user.name} </td><td>${user.email}</td></tr>`;
+                usuario += `<tr><td>${user.id} </td><td>${user.username} </td><td>${user.name} </td></tr>`;
+
             });
             document.getElementById("users").innerHTML = usuario;
         });
 }
+
+// function comentarios() {
+//     fetch("https://jsonplaceholder.typicode.com/comments")
+//         .then(response => response.json())
+//         .then(json => {
+//             var coments;
+//             json.forEach(user => {
+//                 coments = `<td>Comentario ${user.id}</td>`;
+//             })
+//             document.getElementById("comentarios").innerHTML = coments;
+//         })
+// }
 
 function select() {
     fetch('https://jsonplaceholder.typicode.com/users')
