@@ -25,7 +25,7 @@ function login() {
     .then(response => response.json())
     .then(data => {
         if(data["token"] == "QpwL5tke4Pnpja7X4") {
-            validaCheckbox(box,userInput,passInput);
+            validaCheckbox(box,passInput,userInput);
             window.location.href = "areaPrivada.html";
         }else {
             intentosRestantes();
