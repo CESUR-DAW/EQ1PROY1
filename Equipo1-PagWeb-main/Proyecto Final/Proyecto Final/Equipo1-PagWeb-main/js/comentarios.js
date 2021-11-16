@@ -1,5 +1,15 @@
-function tabla() {
-    fetch("https://jsonplaceholder.typicode.com/users")
+async function cargar(){
+1
+    tabla().then((prueba) => {
+        tabla(prueba);
+    })
+
+}
+
+
+
+async function tabla() {
+    prueba = await fetch("https://jsonplaceholder.typicode.com/users")
         .then(response => response.json())
         .then(json => {
             var usuario = `<tr><th>ID</th><th>Nombre</th><th>Apellidos</th></tr>`;
@@ -8,7 +18,11 @@ function tabla() {
 
             });
             document.getElementById("users").innerHTML = usuario;
-        });
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        return prueba;
 }
 
 // function comentarios() {
