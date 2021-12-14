@@ -13,8 +13,8 @@ async function usuarios() {
             return response.json();
         })
         //Guardamos la respuesta en un array
-        .then((jsonResponse) => {
-            return jsonResponse;
+        .then((json) => {
+            return json;
         })
         .catch((error) => {
             console.log(error);
@@ -35,61 +35,11 @@ function mostrarUsuarios(arrayUsuarios) {
 
 // Imprimir Comentarios 
 function comentarios() {
-    mostrarUsuarios().then(arrayUsuarios => {
-        mostrarComentarios().then(arrayComentarios => {
-            mostrarTodo(arrayComentarios, arrayUsuarios);
+    mostrarUsuarios().then(arrayUsuarios =>{
+        mostrarComentarios().then(arrayComentarios =>{
+            mostrarComentarios(arrayComentarios,arrayUsuarios);
         })
     });
-}
-
-function mostrarComentarios() {
-    var arrayComentarios = await fetch("https://jsonplaceholder.typicode.com/posts")
-
-        .then((response) => {
-            return response.json();
-        })
-
-        .then((jsonResponse) => {
-            return jsonResponse;
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    return arrayComentarios;
-}
-//AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-function mostrarTodo(arrayComentarios, arrayUsuarios) {
-    //variable para contabilizar los comentarios y su contenido
-    y = 1;
-
-    //con este 1er for recorremos los la api de usuarios imprimiendo el usuario id y el nombre
-    for (i = 0; i < arrayUsuarios.length; i++) {
-
-        document.getElementById("idUser").innerHTML += `
-        <hr>
-         <h2 class="usuarioTitulo">${arrayUsers[i].name}. Id de usuario  ${arrayUsers[i].id}</h2>
-         `
-            // este segundo for recorre el post 
-        for (x = 0; x < arrayPost.length; x++) {
-            //comprobando si el comentario coincide con el id del usuario 
-            //en caso de ser asi imprimimos todos sus titulos y comentarios
-            if (arrayPost[x].userId == arrayUsers[i].id) {
-
-                contenido.innerHTML += `
-                <h3 class="comentarioTitulo">Comentario ${y} : ${arrayPost[x].title}</h3>
-
-                <p>El contenido del comentario ${y}  es :  ${arrayPost[x].body}</p>
-              
-                `
-                    //aumentamos la variable por cada nuevo comentario
-                y++;
-            }
-
-        }
-        //gualamos la variable a 1 para que al vovler a contabilizar vuelva a empezar por el 1
-        y = 1;
-
-    }
 }
 
 
