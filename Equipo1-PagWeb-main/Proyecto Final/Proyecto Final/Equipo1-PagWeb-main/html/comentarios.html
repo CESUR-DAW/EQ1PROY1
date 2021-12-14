@@ -15,7 +15,7 @@
     <!--Library-->
 </head>
 
-<body onload="cargar()">
+<body onload="mostarUsuarios()">
 
     <div class="encabezado">
         <a href="index.html"> <img id="logo" alt="foto logo" src="../img/foto-equipo.png"></a>
@@ -34,7 +34,11 @@
     <!--FIN Barra de navegacion-->
 
     <!--Lista Usuarios Story 1-->
-    <table id="users"></table>
+    <form id="formComent">
+        <select name="idUser" id="idUser">
+            <!-- Usuarios disponibles -->
+        </select>
+    </form>
 
     <!--Story 2-->
     <div id="comentarios">
