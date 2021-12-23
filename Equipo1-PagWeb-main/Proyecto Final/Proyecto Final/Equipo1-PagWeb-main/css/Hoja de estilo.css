@@ -767,5 +767,9 @@ h4 {
     max-width: 100%;
 }
 
+.input-comentario:hover{
+    background-color: grey;
+}
+
 
 /*fin contenedor flex*/

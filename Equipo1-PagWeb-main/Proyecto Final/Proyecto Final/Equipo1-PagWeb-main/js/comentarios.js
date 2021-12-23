@@ -27,7 +27,7 @@ async function usuarios() {
         .catch((error) => {
             console.log("Hubo un problema con la petición Fetch" + error);
         })
-        //Devolvemos el array para trabajar con este
+    //Devolvemos el array para trabajar con este
     return arrayUsuarios;
 }
 
@@ -75,13 +75,13 @@ function mostrarTodo(arrayPost, arrayUsuarios) {
 
         document.getElementById("comentarios").innerHTML +=
             ` <hr> <h2 class="usuarioTitulo">${arrayUsuarios[i].name}. Id de usuario  ${arrayUsuarios[i].id}</h2> `
-            // este  for recorre el post  y comprueba si el comentario coincide con el id del usuario 
+        // este  for recorre el post  y comprueba si el comentario coincide con el id del usuario 
         for (x = 0; x < arrayPost.length; x++) {
             //imprimimos todos sus titulos y comentarios
             if (arrayPost[x].userId == arrayUsuarios[i].id) {
                 document.getElementById("comentarios").innerHTML += ` <h3>Comentario ${contador} : ${arrayPost[x].title}</h3>
-                <p>El contenido del comentario ${contador}  es :  ${arrayPost[x].body}</p> `
-                    //aumentamos la variable por cada  comentario
+                <p><b>El contenido del comentario ${contador}  es </b>:  ${arrayPost[x].body}</p> `
+                //aumentamos la variable por cada  comentario
                 contador++;
             }
         }
@@ -90,42 +90,86 @@ function mostrarTodo(arrayPost, arrayUsuarios) {
     }
 }
 
+//Story 3
 
+var datosForm = document.getElementById("formComent");
 
+//Vemos cuando el usuario pulsa el boton enviar
 
+datosForm.addEventListener('submit', function (e) {
+
+    //Desactivamos el submit
+    e.preventDefault();
+
+    //Subimos a la api
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: JSON.stringify({
+            title: document.getElementById("titulo").value,
+            body: document.getElementById("comentario").value,
+            userId: document.getElementById("idUser").value,
+        }),
+        headers: {
+            'Content-type': 'application/json',
+        },
+    })
+        .then((response) => response.json())
+        .then((json) => {
+            //actualizamos el array con los datos para volver a imprimir
+            //con el nuevo comentario
+            usuarios().then(arrayUsuarios => {
+                mostrarComentarios().then(arrayPost => {
+                    //Añade el nuevo post al array de post
+                    arrayPost.push(json);
+                    //Borra todo el div con contenido
+                    var cuerpo = document.getElementById("comentarios")
+                    borraElementosHTML(cuerpo);
+                    //Vuelve a imprimirlo actualizado
+                    mostrarTodo(arrayPost, arrayUsuarios);
+                })
+            });
+        });
+});
+
+//Borra la informacion html previa de los usuarios
+function borraElementosHTML(elementoPadre) {
+    while (elementoPadre.firstChild) {
+        elementoPadre.removeChild(elementoPadre.lastChild);
+    }
+}
 
 
 
 //NO SE SABE SUS FUNCIONES
 
-function select() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
-        .then(json => crearFormulario(json))
+// function select() {
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//         .then(response => response.json())
+//         .then(json => crearFormulario(json))
 
-    function crearFormulario(response) {
-        var elArray = response;
-        var elSelect = "<select id='idusu'>";
-        for (var i = 0; i < elArray.length; i++) {
-            elSelect += "<option value='" + elArray[i].id + "'>" + elArray[i].username + "</option>";
-        }
-        elSelect += "</select>";
-        document.getElementById("prueba").innerHTML = elSelect;
-    }
-}
+//     function crearFormulario(response) {
+//         var elArray = response;
+//         var elSelect = "<select id='idusu'>";
+//         for (var i = 0; i < elArray.length; i++) {
+//             elSelect += "<option value='" + elArray[i].id + "'>" + elArray[i].username + "</option>";
+//         }
+//         elSelect += "</select>";
+//         document.getElementById("prueba").innerHTML = elSelect;
+//     }
+// }
 
-function exportadatos() {
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            body: JSON.stringify({
-                title: document.getElementById("titulo").value,
-                body: document.getElementById("comentario").value,
-                /*userId: document.getElementById("idusu").value,*/
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
-}
+// function exportadatos() {
+//     fetch('https://jsonplaceholder.typicode.com/posts', {
+//         method: 'POST',
+//         body: JSON.stringify({
+//             title: document.getElementById("titulo").value,
+//             body: document.getElementById("comentario").value,
+//             /*userId: document.getElementById("idusu").value,*/
+//         }),
+//         headers: {
+//             'Content-type': 'application/json; charset=UTF-8',
+//         },
+//     })
+//         .then((response) => response.json())
+//         .then((json) => console.log(json));
+// }
