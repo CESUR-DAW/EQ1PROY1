@@ -137,39 +137,3 @@ function borraElementosHTML(elementoPadre) {
         elementoPadre.removeChild(elementoPadre.lastChild);
     }
 }
-
-
-
-//NO SE SABE SUS FUNCIONES
-
-// function select() {
-//     fetch('https://jsonplaceholder.typicode.com/users')
-//         .then(response => response.json())
-//         .then(json => crearFormulario(json))
-
-//     function crearFormulario(response) {
-//         var elArray = response;
-//         var elSelect = "<select id='idusu'>";
-//         for (var i = 0; i < elArray.length; i++) {
-//             elSelect += "<option value='" + elArray[i].id + "'>" + elArray[i].username + "</option>";
-//         }
-//         elSelect += "</select>";
-//         document.getElementById("prueba").innerHTML = elSelect;
-//     }
-// }
-
-// function exportadatos() {
-//     fetch('https://jsonplaceholder.typicode.com/posts', {
-//         method: 'POST',
-//         body: JSON.stringify({
-//             title: document.getElementById("titulo").value,
-//             body: document.getElementById("comentario").value,
-//             /*userId: document.getElementById("idusu").value,*/
-//         }),
-//         headers: {
-//             'Content-type': 'application/json; charset=UTF-8',
-//         },
-//     })
-//         .then((response) => response.json())
-//         .then((json) => console.log(json));
-// }
